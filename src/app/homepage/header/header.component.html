@@ -21,26 +21,26 @@
             <hr style="border-top: 5px double #333">
           </div>
         
-        <div class="row"></div>
           <div class="col-xs-6 col-xs-offset-3" style="background-color: white; padding: 2em 1em; border-radius: 1.5%">
               <div class="card text-left">
                   <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs">
-                      <li class="nav-item">
-                        <a class="nav-link active" href="#">Books</a>
+                      <li class="nav-item" (click)="bookSearchOn()">
+                        <a class="nav-link active">Books</a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Authors</a>
+                      <li class="nav-item" (click)="authorSearchOn()">
+                        <a class="nav-link">Authors</a>
                       </li>
                     </ul>
                   </div>
                   <div class="card-body">
                       <form class="form-block" style="padding-top: 2em">
                         <div class="row">
-                          <div class="col-xs-10">
-                              <app-search-book></app-search-book>
-                              <app-search-author></app-search-author>
-                          </div>
+                            <div class="col-xs-10" [ngSwitch]="authorSearch">
+                              <div *ngSwitchCase="'book-clicked'"><app-search-book></app-search-book></div>
+                             <div *ngSwitchCase="'author-clicked'"><app-search-author></app-search-author></div>   
+                             <div *ngSwitchDefault><app-search-book></app-search-book></div> 
+                            </div>
                           <div class="col-xs-2">
                               <button type="submit" class="btn btn-primary mb-2">Search</button>
                           </div>
@@ -52,4 +52,3 @@
         </div>
       </div>
     </div>
-

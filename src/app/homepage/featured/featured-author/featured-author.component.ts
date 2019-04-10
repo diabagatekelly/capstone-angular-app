@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorsService } from 'src/app/shared/authors.service';
-import { IAuthors } from 'src/app/shared/authors.interface';
+import { AuthorsService } from '../../../shared/authors.service';
+import { IAuthors } from '../../../shared/authors.interface';
 
 @Component({
   selector: 'app-featured-author',

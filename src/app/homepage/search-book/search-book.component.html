@@ -1,3 +1,27 @@
-<div class="form-group mx-sm-3 mb-2">
-    <input type="text" class="form-control" id="search-box" placeholder="Search Books">
+<div class="col-xs-10">
+  <form class="form-group mx-sm-3 mb-2">
+    <input type="text" class="form-control" id="search-box" placeholder="Search Books" name="searchbox" [(ngModel)]="bookTitle">
+  </form>
 </div>
+<div>
+    <a routerLink='/search-book-results'>
+    <button type="submit" class="btn btn-primary mb-2" (click)="onSearchBook()" (click)="onSendBookTitle()">Search</button>
+  </a>
+</div>
+<div class="row text-center">
+    <div *ngFor="let search of viewSearch">Result 1-20 of {{search['total-results']}}</div>
+</div>
+<div>
+    <hr>
+  </div>
+
+  <div class="row" *ngFor="let book of viewBooks[0]">
+      <div class="col-sm-3">
+          <img src="{{book.best_book[0].image_url }}">
+        </div>
+         <div class="col-sm-9">
+            <div>{{book.best_book[0].title }}</div>
+            <div>{{book.best_book[0].author[0].name }}</div>
+            <div>{{book.best_book[0].average_rating }}</div>
+        </div> 
+   </div>

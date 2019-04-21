@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BooksService } from '../../../shared/books.service';
+import { NYTBooksService } from '../../../shared/nyt-featured-books.service';
 import { IBooks } from '../../../shared/books.interface';
 
 @Component({
@@ -14,10 +14,10 @@ export class FeaturedBooksComponent implements OnInit {
   authors;
   i: number = Math.floor(Math.random() * 15);
 
-  constructor(private bookService: BooksService) {}
+  constructor(private nytBookService: NYTBooksService) {}
 
     ngOnInit() {
-    this.bookService.getBooks().subscribe(res => {
+    this.nytBookService.getBooks().subscribe(res => {
       this.books.push(res);
       console.log(this.books);
       this.authors = this.books[0].results.books[this.i].author;

@@ -11,5 +11,6 @@ export class SharedComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
+
+

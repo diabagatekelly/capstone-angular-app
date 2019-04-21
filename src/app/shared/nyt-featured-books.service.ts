@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 
-export class BooksService {
+export class NYTBooksService {
 url = 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=vJHZHdvvWIqGBTaIsZksGRah94kH2n62';
 
 constructor(private http: HttpClient) { }

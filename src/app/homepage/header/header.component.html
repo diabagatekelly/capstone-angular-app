@@ -2,10 +2,10 @@
         <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
             <div class="container">
                 <div class="row">
-                    <a class="navbar-brand">Book Chat</a>
+                    <a class="navbar-brand" routerLink="/home">Book Chat</a>
                     <ul class="nav navbar-nav pull-right" routerLinkActive="active">
-                        <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" routerLink="about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" routerLink="/home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" routerLink="/about">About</a></li>
                         <li class="nav-item"><a class="nav-link" routerLink="courses">Courses</a></li>
                     </ul>
                 </div>
@@ -34,21 +34,22 @@
                     </ul>
                   </div>
                   <div class="card-body">
-                      <form class="form-block" style="padding-top: 2em">
-                        <div class="row">
-                            <div class="col-xs-10" [ngSwitch]="authorSearch">
+                      <div class="form-block" style="padding-top: 2em">
+                        <div class="row" [ngSwitch]="authorSearch">
                               <div *ngSwitchCase="'book-clicked'"><app-search-book></app-search-book></div>
                              <div *ngSwitchCase="'author-clicked'"><app-search-author></app-search-author></div>   
                              <div *ngSwitchDefault><app-search-book></app-search-book></div> 
                             </div>
-                          <div class="col-xs-2">
-                              <button type="submit" class="btn btn-primary mb-2">Search</button>
-                          </div>
                         </div>
-                        </form>
                   </div>
                 </div>
           </div>
         </div>
       </div>
     </div>
+
+ 
+  
+  
+  
+    

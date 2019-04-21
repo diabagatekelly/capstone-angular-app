@@ -1,33 +1,29 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {FormControl} from '@angular/forms';
+import { GoodreadsBooksService } from '../../../shared/goodreads-books.service';
 import { HttpClient} from '@angular/common/http';
+import {ActivatedRoute} from '@angular/router';
 
 const parseString = require('xml2js').parseString;
 
 
-
-
 @Component({
-  selector: 'app-search-book',
-  templateUrl: './search-book.component.html',
-  styleUrls: ['./search-book.component.css']
+  selector: 'app-search-book-results',
+  templateUrl: './search-book-results.component.html',
+  styleUrls: ['./search-book-results.component.css']
 })
-
-export class SearchBookComponent implements OnInit {
-  @Output() sendBookTitle = new EventEmitter();
+export class SearchBookResultsComponent implements OnInit {
+  authorSearch = '';
   viewBooks = [];
   books: any = '';
   viewSearch = [];
   search: any = [];
   url = 'https://mighty-beach-cg-cors-48446.herokuapp.com/https://www.goodreads.com/search/index.xml?key=oybtOOeDZcd9cbsJTJCTg&q=';
-    bookTitle = '';
-
-    onSendBookTitle() {
-      this.sendBookTitle.emit(this.bookTitle);
-    }
+  bookTitle = '';
 
   constructor(private http: HttpClient) {}
 
-   onSearchBook(event: any) {
+  onSearchBook(event: any) {
     return this.http.get(this.url + this.bookTitle, {responseType: 'text'}).subscribe((res =>
     parseString(res, (err, result) => {
       if (err) {
@@ -46,26 +42,16 @@ export class SearchBookComponent implements OnInit {
           ));
   }
 
-
-  // searchTitle() {
-  //   let bookSearch;
-  //   this.http.get(this.url + this.bookTitle)
-  //   .subscribe(
-  //     (res) => {
-  //       bookSearch = res;
-  //       console.log(bookSearch);
-  //     });
-  // }
+  ngOnInit() {
+  }
 
 
-ngOnInit() {
-      // this.goodreadsbooks.getBooks(this.bookTitle)
-      // .subscribe(result => {
-      //     this.searchResult = result;
-      //     this.searchDetail = result;
-      //     console.log(this.searchResult);
-      //     console.log(this.searchDetail);
-      //   });
+  authorSearchOn() {
+    this.authorSearch = 'author-clicked';
+  }
+
+  bookSearchOn() {
+    this.authorSearch = 'book-clicked';
   }
 
 }

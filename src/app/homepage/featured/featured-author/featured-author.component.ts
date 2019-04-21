@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorsService } from '../../../shared/authors.service';
+import { AuthorsService } from '../../../shared/goodreads-authors.service';
 import { IAuthors } from '../../../shared/authors.interface';
 
 @Component({
@@ -8,14 +8,23 @@ import { IAuthors } from '../../../shared/authors.interface';
   styleUrls: ['./featured-author.component.css']
 })
 export class FeaturedAuthorComponent implements OnInit {
-  authors: IAuthors[] = [];
+  authors = [];
   booklist: any[] = [];
 
   constructor(private authorService: AuthorsService) { }
 
   ngOnInit() {
-  this.authorService.getAuthors().subscribe(res => {
-    this.authors.push(res);
+    this.authorService.getAuthors().subscribe(res => {
+      this.authors.push(res);
+      console.log(this.authors);
+  });
+
+  // ngOnInit() {
+  // this.authorService.getAuthors().subscribe(res => {
+  //   this.authors.push(res);
+
+
+
     // this.parseString(res, (result, err) => {
     //   if (err) {
     //     console.log(err);
@@ -26,6 +35,5 @@ export class FeaturedAuthorComponent implements OnInit {
     //     this.booklist.push(err.GoodreadsResponse.author[0].books[0].book[length]);
     //   }
     // });
-  });
   }
 }

@@ -8,6 +8,7 @@ import { HomepageModule } from './homepage/homepage.module';
 
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { GoodreadsBooksService } from './shared/goodreads-books.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [GoodreadsBooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

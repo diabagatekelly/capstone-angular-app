@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from '@angular/forms';
-import { GoodreadsBooksService } from '../../../shared/goodreads-books.service';
-import { HttpClient} from '@angular/common/http';
-import {ActivatedRoute} from '@angular/router';
-
-const parseString = require('xml2js').parseString;
-
+import { GoodreadsBooksService } from 'src/app/shared/goodreads-books.service';
 
 @Component({
   selector: 'app-search-book-results',
@@ -13,38 +7,30 @@ const parseString = require('xml2js').parseString;
   styleUrls: ['./search-book-results.component.css']
 })
 export class SearchBookResultsComponent implements OnInit {
+  searchabook = '';
   authorSearch = '';
-  viewBooks = [];
-  books: any = '';
-  viewSearch = [];
-  search: any = [];
-  url = 'https://mighty-beach-cg-cors-48446.herokuapp.com/https://www.goodreads.com/search/index.xml?key=oybtOOeDZcd9cbsJTJCTg&q=';
-  bookTitle = '';
+  searchDetail = '';
+  bookDetail = [];
 
-  constructor(private http: HttpClient) {}
 
-  onSearchBook(event: any) {
-    return this.http.get(this.url + this.bookTitle, {responseType: 'text'}).subscribe((res =>
-    parseString(res, (err, result) => {
-      if (err) {
-            console.error('There was an error getting authors', err);
-          }
-      this.books = result.GoodreadsResponse.search[0].results[0].work;
-      this.search = result.GoodreadsResponse.search[0];
-      console.log(this.books);
-      console.log(this.search);
-
-      this.viewBooks.splice(0, 1, this.books);
-      this.viewSearch.splice(0, 1, this.search);
-
-      return [this.viewBooks, this.viewSearch] = event.target.value;
-          })
-          ));
+  constructor(private goodreadsbooks: GoodreadsBooksService) {
+    this.goodreadsbooks.sendUrl.subscribe(searchabook => this.searchabook = searchabook);
+    this.goodreadsbooks.getBooks()
+    .subscribe(result => {
+        this.searchDetail = result;
+        console.log(this.searchDetail);
+        this.bookDetail.push(result.results[0].work);
+      });
   }
 
   ngOnInit() {
   }
 
+  onSearchBook() {
+    this.goodreadsbooks.getBookTitle(this.searchabook);
+    console.log(this.searchabook);
+    this.goodreadsbooks.sendUrl.emit(this.searchabook);
+  }
 
   authorSearchOn() {
     this.authorSearch = 'author-clicked';

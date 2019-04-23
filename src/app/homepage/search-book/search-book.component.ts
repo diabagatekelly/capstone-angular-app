@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { GoodreadsBooksService } from 'src/app/shared/goodreads-books.service';
+import { Component, OnInit } from '@angular/core';
+import { GoodreadsBooksService } from '../../shared/goodreads-books.service';
 
 @Component({
   selector: 'app-search-book',

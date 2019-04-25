@@ -25,7 +25,8 @@ import { GoodreadsBooksService } from '../shared/goodreads-books.service';
     FeaturedAuthorComponent,
     SearchAuthorComponent,
     SearchBookComponent,
-    RoutingComponents  ],
+    RoutingComponents,
+     ],
     imports: [
     CommonModule,
     HttpClientModule,

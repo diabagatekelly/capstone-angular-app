@@ -20,7 +20,7 @@ import { GoodreadsBooksService } from './shared/goodreads-books.service';
     HomepageModule,
     HttpClientModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [GoodreadsBooksService],
   bootstrap: [AppComponent]

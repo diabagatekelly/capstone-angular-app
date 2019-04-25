@@ -1,13 +1,11 @@
 <div class="col-xs-10">
   <form class="form-group mx-sm-3 mb-2">
-    <input type="text" class="form-control" id="search-box" placeholder="Search Books" name="search" [(ngModel)]="searchabook">
+    <input type="text" class="form-control" id="home-search-box" placeholder="Search Books" name="home-search" [(ngModel)]="searchabook">
   </form>
 </div>
 <div>
-    <a routerLink='/search-book-results'>
-    <button type="submit" class="btn btn-primary mb-2" (click)="onSearchBook()">Search</button>
-  </a>
+  <button type="submit" class="btn btn-primary mb-2" (click)="onLoad()" (click)="onSearchBook()">Search</button>
 </div>
-
-
+<div class="col-xs-10">
+ 
       

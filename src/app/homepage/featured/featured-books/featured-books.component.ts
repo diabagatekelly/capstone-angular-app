@@ -19,8 +19,9 @@ export class FeaturedBooksComponent implements OnInit {
     ngOnInit() {
     this.nytBookService.getBooks().subscribe(res => {
       this.books.push(res);
+      this.books = this.books[0].results.books;
       console.log(this.books);
-      this.authors = this.books[0].results.books[this.i].author;
+      // this.authors = this.books[0].results.books[this.i].author;
   });
 
 

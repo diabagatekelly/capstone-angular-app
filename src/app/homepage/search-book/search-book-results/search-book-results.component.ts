@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GoodreadsBooksService } from '../../../shared/goodreads-books.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
+import { GetBookTitleService } from 'src/app/shared/getbooktitle.service';
 
 @Component({
   selector: 'app-search-book-results',
@@ -10,19 +10,18 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class SearchBookResultsComponent implements OnInit {
   searchabook;
   authorSearch = '';
-  searchDetail = '';
+  searchDetail = [];
   bookDetail = [];
 
 
-  constructor(private goodreadsbooks: GoodreadsBooksService, private route: ActivatedRoute) {}
+  constructor(private getbooktitle: GetBookTitleService, private route: ActivatedRoute) {
+    this.bookDetail = this.getbooktitle.viewBooks;
+    this.searchDetail = this.getbooktitle.viewSearch;
+    console.log(this.bookDetail);
+    console.log(this.searchDetail);
+  }
 
   ngOnInit() {
-this.goodreadsbooks.getBooks(this.searchabook)
-    .subscribe(result => {
-        this.searchDetail = result;
-        console.log(this.searchDetail);
-        this.bookDetail.push(result.results[0].work);
-      });
   }
 
   authorSearchOn() {
@@ -32,5 +31,4 @@ this.goodreadsbooks.getBooks(this.searchabook)
   bookSearchOn() {
     this.authorSearch = 'book-clicked';
   }
-
 }

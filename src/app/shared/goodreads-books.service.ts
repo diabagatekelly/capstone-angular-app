@@ -1,7 +1,6 @@
 import { Injectable, OnInit, OnChanges, SimpleChanges, Component, NgModule } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import {IBooktitle} from './getbooktitle.service';
 import { Router, ActivatedRoute, RouterModule, Routes} from '@angular/router';
 import { SearchBookResultsComponent } from '../homepage/search-book/search-book-results/search-book-results.component';
 const parseString = require('xml2js').parseString;

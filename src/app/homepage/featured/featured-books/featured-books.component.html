@@ -1,17 +1,19 @@
-<div class="container" style="height: 100vh">
-<div class="row text-center">
-    <h2>FEATURED BOOKS</h2>
-</div>
-<div class="carousel-inner text-center">
-    <div class="item active">
-        <div class="row">
-            <div class="col-sm-3" *ngFor="let book of books[0].results.books | slice:0:8" style="margin: 0; padding: 0; width: 40vh"> 
-                <div style="height: 45vh; width: 100%; padding: 0; margin: 0"><a href="#"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 45vh;"></a></div>
-            </div>
-            </div>
-        </div>
-    </div>
-</div>
+        <div class="container" style="height: 100vh; width: 100vw">
+                <div class="row text-center">
+                    <h2>FEATURED BOOKS</h2>
+                </div>
+                <div class="carousel-inner text-center" style="width: 100vw">
+                    <div class="item active">
+                        <div class="row">
+                            <div class="col-sm-3" *ngFor="let book of books | slice:0:8" style="margin: 0; padding: 0; width: 51vh"> 
+                                <div style="height: 49vh; width: 100%; padding: 0; margin: 0"><a href="#"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 49vh;"></a></div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
 
 
 <!-- <div class="container">

@@ -37,16 +37,16 @@
       </div>
   </div>
 
-
-  <div class="row text-center">
-    <div>Result 1 - 20 of {{searchDetail['total-results']}}</div>
+<div>
+  <div class="row text-center" *ngFor="let search of searchDetail">
+    <div>Result 1 - 20 of {{search['total-results']}}</div>
 </div>
 <div>
     <hr>
   </div>
 
   <div class="row" *ngFor="let book of bookDetail[0]">
-        <div class="col-sm-3">
+          <div class="col-sm-3">
             <img src="{{book.best_book[0].image_url }}">
           </div>
            <div class="col-sm-9">
@@ -55,6 +55,7 @@
               <div>{{book.best_book[0].average_rating }}</div>
           </div> 
     </div>
+  </div>
       
 
 

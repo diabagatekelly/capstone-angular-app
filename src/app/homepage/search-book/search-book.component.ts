@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router, Params } from '@angular/router';
-import { GoodreadsBooksService } from '../../shared/goodreads-books.service';
+import { Router} from '@angular/router';
+import { GetBookTitleService } from '../../shared/getbooktitle.service';
 
 @Component({
   selector: 'app-search-book',
@@ -11,10 +11,10 @@ import { GoodreadsBooksService } from '../../shared/goodreads-books.service';
 export class SearchBookComponent implements OnInit {
     searchabook = '';
 
-  constructor(private goodreads: GoodreadsBooksService, private router: Router) { }
+  constructor(private getbooktitle: GetBookTitleService, private router: Router) { }
 
     onSearchBook() {
-      this.goodreads.getBookTitle(this.searchabook);
+      this.getbooktitle.onSearchaBook(this.searchabook, event);
       console.log(this.searchabook);
     }
 

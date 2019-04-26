@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-import { GetBookTitleService } from 'src/app/shared/getbooktitle.service';
+import { GetBookTitleService } from '../../../shared/getbooktitle.service';
 
 @Component({
   selector: 'app-search-book-results',

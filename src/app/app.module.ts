@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { GoodreadsBooksService } from './shared/goodreads-books.service';
 import { GetBookTitleService } from './shared/getbooktitle.service';
+import { FilterAuthorNameService } from './shared/filterauthorname.service';
+import { GetAuthorNameService } from './shared/getauthorname.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { GetBookTitleService } from './shared/getbooktitle.service';
     CommonModule,
     ReactiveFormsModule,
   ],
-  providers: [GoodreadsBooksService, GetBookTitleService],
+  providers: [GoodreadsBooksService, GetBookTitleService, FilterAuthorNameService, GetAuthorNameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

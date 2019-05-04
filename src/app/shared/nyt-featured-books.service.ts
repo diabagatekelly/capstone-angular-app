@@ -1,26 +1,38 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IBooks } from './books.interface';
-import { map } from 'rxjs/operators';
-
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class NYTBooksService {
-url = 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=vJHZHdvvWIqGBTaIsZksGRah94kH2n62';
+urlFiction =
+'https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-fiction.json?api-key=vJHZHdvvWIqGBTaIsZksGRah94kH2n62';
 
-constructor(private http: HttpClient) { }
+urlNonfiction =
+'https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-nonfiction.json?api-key=vJHZHdvvWIqGBTaIsZksGRah94kH2n62';
 
-getBooks() {
-  return this.http.get<IBooks[]>(this.url);
+urlChildren = 'https://api.nytimes.com/svc/books/v3/lists/current/picture-books.json?api-key=vJHZHdvvWIqGBTaIsZksGRah94kH2n62';
+
+urlYoungAdult = 'https://api.nytimes.com/svc/books/v3/lists/current/young-adult.json?api-key=vJHZHdvvWIqGBTaIsZksGRah94kH2n62';
+
+constructor(private http: HttpClient) {}
+
+getFictionBooks() {
+  return this.http.get<IBooks[]>(this.urlFiction);
 }
 
+getNonfictionBooks() {
+  return this.http.get<IBooks[]>(this.urlNonfiction);
+}
 
-// getBooks() {
-//   return this.http
-//       .get(this.url, {responseType: 'text'});
-//       }
-      }
+getPictureBooks() {
+  return this.http.get<IBooks[]>(this.urlChildren);
+}
+
+getYoungAdultBooks() {
+  return this.http.get<IBooks[]>(this.urlYoungAdult);
+}
+}
 

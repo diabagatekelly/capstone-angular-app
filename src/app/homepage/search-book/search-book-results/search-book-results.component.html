@@ -49,11 +49,11 @@
           <div class="col-sm-3">
             <img src="{{book.best_book[0].image_url }}">
           </div>
-           <div class="col-sm-9">
+           <a class="col-sm-9" [routerLink]="['/search-book-results/books']" [queryParams]="{title: book.best_book[0].title, id: book.best_book[0].id[0]._}">
               <div>{{book.best_book[0].title }}</div>
               <div>{{book.best_book[0].author[0].name }}</div>
               <div>{{book.best_book[0].average_rating }}</div>
-          </div> 
+          </a> 
     </div>
   </div>
       

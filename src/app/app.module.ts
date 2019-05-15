@@ -12,6 +12,7 @@ import { GoodreadsBooksService } from './shared/goodreads-books.service';
 import { GetBookTitleService } from './shared/getbooktitle.service';
 import { FilterAuthorNameService } from './shared/filterauthorname.service';
 import { GetAuthorNameService } from './shared/getauthorname.service';
+import { AuthorInfoService } from './shared/author-info.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { GetAuthorNameService } from './shared/getauthorname.service';
     CommonModule,
     ReactiveFormsModule,
   ],
-  providers: [GoodreadsBooksService, GetBookTitleService, FilterAuthorNameService, GetAuthorNameService],
+  providers: [GoodreadsBooksService, GetBookTitleService, FilterAuthorNameService, GetAuthorNameService, AuthorInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

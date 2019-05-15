@@ -43,10 +43,10 @@
     </div>
   
     <div class="row" *ngFor="let author of authorDetail">
-            <div class="col-sm-3">
+            <a class="col-sm-3">
               <img src="{{author.small_image_url}}">
-              <div>{{author.name}}</div>
-            </div>
+              <div [routerLink]="['/search-author-results/authors']" [queryParams]="{name: author.name}">{{author.name}}</div>
+            </a>
              <div class="col-sm-9" *ngFor="let book of author.books[0].book">
                 <div>{{book.title}}</div>
             </div> 

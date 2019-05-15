@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
-import { FilterAuthorNameService } from '../../../shared/filterauthorname.service';
+import { ActivatedRoute, Router} from '@angular/router';
 import { GetAuthorNameService } from '../../../shared/getauthorname.service';
 
 
@@ -11,13 +10,10 @@ import { GetAuthorNameService } from '../../../shared/getauthorname.service';
 })
 
 export class SearchAuthorResultsComponent implements OnInit {
-  searchauthor;
   authorSearch = '';
   authorDetail = [];
-  filteredAuthors = [];
 
-  constructor(private filterauthorname: FilterAuthorNameService,
-              private route: ActivatedRoute, private getauthorname: GetAuthorNameService) {
+  constructor(private route: ActivatedRoute, private router: Router, private getauthorname: GetAuthorNameService) {
     this.authorDetail = this.getauthorname.viewAuthors;
     console.log(this.authorDetail);
    }

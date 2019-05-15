@@ -1,0 +1,19 @@
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <div class="container">
+      <div class="row">
+          <a class="navbar-brand" routerLink="/">Book Chat</a>
+          <ul class="nav navbar-nav pull-right" routerLinkActive="active">
+              <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
+              <li class="nav-item"><a class="nav-link" routerLink="/about">About</a></li>
+             <li class="nav-item"><a class="nav-link">Courses</a></li>
+          </ul>
+      </div> 
+    </div>
+</nav>
+<div class="container" *ngFor="let info of authorInfo" style="margin-top: 10vh">
+  <div class="row">
+    <div class="col-xs-3">
+      <img src="{{info.large_image_url}}">
+    </div>
+  </div>
+</div>

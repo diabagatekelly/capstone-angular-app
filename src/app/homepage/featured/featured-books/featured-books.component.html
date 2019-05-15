@@ -12,27 +12,28 @@
                 <div class="item active" [ngSwitch]="featuredBook">
                     <div class="row">
                         <div class="col-sm-3" *ngFor="let book of fictionBooks | slice:0:8" style="margin: 0; padding: 0; width: 51vh"> 
-                            <div *ngSwitchCase="'fiction'" style="height: 39vh; width: 100%; padding: 0; margin: 0"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></div>
+                            <a *ngSwitchCase="'fiction'" style="height: 39vh; width: 100%; padding: 0; margin: 0" [routerLink]="['/search-book-results/books']" [queryParams]="{title: book.title}"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-3" *ngFor="let book of nonfictionBooks | slice:0:8" style="margin: 0; padding: 0; width: 51vh"> 
-                            <div *ngSwitchCase="'nonfiction'" style="height: 39vh; width: 100%; padding: 0; margin: 0"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></div>
+                            <a *ngSwitchCase="'nonfiction'" style="height: 39vh; width: 100%; padding: 0; margin: 0" [routerLink]="['/search-book-results/books']" [queryParams]="{title: book.title}"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-3" *ngFor="let book of childrenBooks | slice:0:8" style="margin: 0; padding: 0; width: 51vh"> 
-                            <div *ngSwitchCase="'children'" style="height: 39vh; width: 100%; padding: 0; margin: 0"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></div>
+                            <a *ngSwitchCase="'children'" style="height: 39vh; width: 100%; padding: 0; margin: 0" [routerLink]="['/search-book-results/books']" [queryParams]="{title: book.title}"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-3" *ngFor="let book of youngAdultBooks | slice:0:8" style="margin: 0; padding: 0; width: 51vh"> 
-                            <div *ngSwitchCase="'youngadult'" style="height: 39vh; width: 100%; padding: 0; margin: 0"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></div>
+                            <a *ngSwitchCase="'youngadult'" style="height: 39vh; width: 100%; padding: 0; margin: 0" [routerLink]="['/search-book-results/books']" [queryParams]="{title: book.title}"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></a>
+
                         </div>
-                    </div>
-                    <div class="row">
+                        </div>
+                            <div class="row">
                         <div class="col-sm-3" *ngFor="let book of fictionBooks | slice:0:8" style="margin: 0; padding: 0; width: 51vh"> 
-                            <div *ngSwitchDefault style="height: 39vh; width: 100%; padding: 0; margin: 0"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></div>
+                            <a *ngSwitchDefault style="height: 39vh; width: 100%; padding: 0; margin: 0" [routerLink]="['/search-book-results/books']" [queryParams]="{title: book.title}"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></a>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,8 @@ import { SearchBookResultsComponent } from './search-book/search-book-results/se
 import { HomepageComponent } from './homepage.component';
 import { SearchAuthorResultsComponent } from './search-author/search-author-results/search-author-results.component';
 import { AboutComponent } from './about/about.component';
+import { AuthorPageComponent } from '../homepage/info/author-page/author-page.component';
+import { BookPageComponent } from '../homepage/info/book-page/book-page.component';
 
 const routes: Routes = [
   // {path: '', redirectTo: '', pathMatch: 'full'},
@@ -11,12 +13,12 @@ const routes: Routes = [
   // {path: 'about', component: AboutComponent},
   {path: 'search-author-results', component: SearchAuthorResultsComponent},
   {path: 'search-book-results', component: SearchBookResultsComponent},
+  {path: 'search-author-results/:authors', component: AuthorPageComponent},
+  {path: 'search-book-results/:books', component: BookPageComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    onSameUrlNavigation: 'reload'
-  })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
@@ -24,5 +26,7 @@ export const RoutingComponents = [
   SearchBookResultsComponent,
   SearchAuthorResultsComponent,
   HomepageComponent,
-  AboutComponent
+  AboutComponent,
+  AuthorPageComponent,
+  BookPageComponent
 ];

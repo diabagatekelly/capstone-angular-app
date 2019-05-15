@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NYTBooksService } from '../../../shared/nyt-featured-books.service';
+import { ActivatedRoute } from '@angular/router';
+import { FilterAuthorNameService } from '../../../shared/filterauthorname.service';
 
 @Component({
   selector: 'app-featured-books',
@@ -15,10 +17,13 @@ export class FeaturedBooksComponent implements OnInit {
 
   featuredBook = '';
 
+  name;
+  title;
+
   authors;
   i: number = Math.floor(Math.random() * 15);
 
-  constructor(private nytBookService: NYTBooksService) {}
+  constructor(private nytBookService: NYTBooksService, private route: ActivatedRoute, private filterauthorname: FilterAuthorNameService) {}
 
     ngOnInit() {
     this.nytBookService.getFictionBooks().subscribe(res => {

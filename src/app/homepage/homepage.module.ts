@@ -14,6 +14,7 @@ import { AuthorsService } from '../shared/goodreads-authors.service';
 import { SearchAuthorComponent } from './search-author/search-author.component';
 import { SearchBookComponent } from './search-book/search-book.component';
 import { GoodreadsBooksService } from '../shared/goodreads-books.service';
+import { BookPageComponent } from './info/book-page/book-page.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { GoodreadsBooksService } from '../shared/goodreads-books.service';
     SearchAuthorComponent,
     SearchBookComponent,
     RoutingComponents,
+    BookPageComponent,
      ],
     imports: [
     CommonModule,

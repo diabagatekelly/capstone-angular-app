@@ -10,24 +10,22 @@ import { GetAuthorNameService } from '../../shared/getauthorname.service';
 })
 export class SearchAuthorComponent implements OnInit {
 searchauthor = '';
-substring = '';
-searchauthorarray = [];
 
   constructor(private filterauthorname: FilterAuthorNameService,
               // private getauthorname: GetAuthorNameService,
               private router: Router) { }
 
-  onSearchAuthor() {
-    this.searchauthor = this.searchauthor.trim();
-    const index = this.searchauthor.lastIndexOf(' ');
-    this.substring = this.searchauthor.substring(index + 1);
-    this.filterauthorname.onSearchanAuthor(this.substring, event);
-  }
+  // onSearchAuthor() {
+  //   this.searchauthor = this.searchauthor.trim();
+  //   const index = this.searchauthor.lastIndexOf(' ');
+  //   this.substring = this.searchauthor.substring(index + 1);
+  //   this.filterauthorname.onSearchanAuthor(this.substring, event);
+  // }
 
-  onLoad() {
-    this.router.navigate(['search-author-results'],
-     {queryParams: {q: this.searchauthor}});
-  }
+  // onLoad() {
+  //   this.router.navigate(['search-author-results'],
+  //    {queryParams: {q: this.searchauthor}});
+  // }
 
   ngOnInit() {
   }

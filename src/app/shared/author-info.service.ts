@@ -1,23 +1,26 @@
 import { HttpClient  } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
+import { map, switchMap } from 'rxjs/operators';
 
 const parseString = require('xml2js').parseString;
 
 @Injectable()
 
 export class AuthorInfoService implements OnInit {
+books = [];
 authorID = '';
 authorInfo = [];
 bookInfo = [];
 url = 'https://mighty-beach-cg-cors-48446.herokuapp.com/https://www.goodreads.com/author/list/';
+
 token = '?format=xml&key=oybtOOeDZcd9cbsJTJCTg';
 
   constructor(private http: HttpClient) {}
 
-  paginateAuthor(viewBooks, id) {
-    console.log(id);
-    this.authorID = viewBooks[0][0].best_book[0].author[0].id[0]._;
-    return this.http.get(this.url + this.authorID + this.token, {responseType: 'text'}).subscribe((res =>
+
+  paginateAuthor(authorID, bookID) {
+    return this.http.get(this.url + authorID + this.token, {responseType: 'text'}).pipe(
+      map(res => {
       parseString(res, (err, result) => {
 
         if (err) {
@@ -27,19 +30,20 @@ token = '?format=xml&key=oybtOOeDZcd9cbsJTJCTg';
 
         this.authorInfo = result.GoodreadsResponse.author[0].books[0].book;
         console.log(this.authorInfo);
-
-        for (let i = 0; i < this.authorInfo.length - 1; i++) {
-          if ( this.authorInfo[i].id[0]._ === id) {
-            this.bookInfo.splice(0, 1, this.authorInfo[i]);
+        this.authorInfo.forEach(book => {
+          if ( book.work[0].id == bookID || book.id[0]._ == bookID) {
+            console.log(book.work[0].id);
+            this.bookInfo = book;
             }
-        }
-
+        });
         console.log(this.bookInfo);
+});
+      return this.bookInfo;
 
-  })));
+}));
 }
-
   ngOnInit() {
   }
 
 }
+

@@ -2,18 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { GetAuthorNameService } from './getauthorname.service';
 import { AuthorInfoService } from './author-info.service';
-import { format } from 'path';
+import { map } from 'rxjs/operators';
 const parseString = require('xml2js').parseString;
 
 @Injectable()
 
 export class FilterAuthorNameService {
+// tslint:disable-next-line:max-line-length
 url =  'https://mighty-beach-cg-cors-48446.herokuapp.com/https://www.goodreads.com/search/index.xml?key=oybtOOeDZcd9cbsJTJCTg&per_page=30&page=1&q=';
 authorName = '';
+trimmedName = '';
 authors = [];
 
 onlyAuthors = [];
-viewAuthors = [];
+viewAuthors;
 filteredAuthors = [];
 filter = [];
 
@@ -38,10 +40,15 @@ distinct = (value, index, self) => {
   return self.indexOf(value) === index;
 }
 
-    onSearchanAuthor(searchabook, event) {
-            this.authorName = searchabook.toLowerCase();
-            return this.http.get(this.url + this.authorName, {responseType: 'text'}).subscribe((res =>
-          parseString(res, (err, result) => {
+    onSearchanAuthor(q) {
+      this.authorName = q;
+      this.trimmedName = q[0].trim();
+      const index = q[0].lastIndexOf(' ');
+      this.trimmedName = q[0].substring(index + 1);
+
+      return this.http.get(this.url + this.trimmedName, {responseType: 'text'}).pipe(
+              map(res => {
+                parseString(res, (err, result) => {
 
             if (err) {
                   console.error('There was an error getting authors', err);
@@ -50,7 +57,8 @@ distinct = (value, index, self) => {
 
             this.authors = result.GoodreadsResponse.search[0].results[0].work;
 
-            for (let i = 0; i < this.authors.length - 1; i++) {
+
+            for (let i = 0; i <= this.authors.length - 1; i++) {
                 this.onlyAuthorsID.splice(i, 1, this.authors[i].best_book[0].author[0].id[0]._);
                 this.onlyAuthorsID.splice(this.authors.length + 1, this.onlyAuthorsID.length);
                 this.filterID = this.onlyAuthorsID;
@@ -62,15 +70,10 @@ distinct = (value, index, self) => {
             this.filteredAuthors = this.onlyAuthors.filter(this.distinct);
             this.filteredAuthorsID = this.onlyAuthorsID.filter(this.distinct);
 
+          });
+                return [this.filteredAuthorsID, this.filteredAuthors, this.trimmedName] as any;
 
-            this.viewAuthorsID.splice(0, 1, this.filteredAuthorsID);
-
-            this.viewAuthors.splice(0, 1, this.filteredAuthors);
-
-            this.getauthorname.onSearchAuthor(this.viewAuthorsID, this.viewAuthors, this.authorName);
-
-                })
-                ));
+                }));
         }
 
     //     toBookInfo(title) {
@@ -103,7 +106,7 @@ distinct = (value, index, self) => {
 
       //   this.viewAuthorInfoID.splice(0, 1, this.filteredAuthorInfoID);
 
-        this.getauthorname.authorInfo(this.authorInfoID);
+        // this.getauthorname.authorInfo(this.authorInfoID);
 
         }
       )));

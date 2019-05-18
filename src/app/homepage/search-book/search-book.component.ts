@@ -13,15 +13,15 @@ export class SearchBookComponent implements OnInit {
 
   constructor(private getbooktitle: GetBookTitleService, private router: Router) { }
 
-    onSearchBook() {
-      this.getbooktitle.onSearchaBook(this.searchabook, event);
-      console.log(this.searchabook);
-    }
+    // onSearchBook() {
+    //   this.getbooktitle.onSearchaBook(this.searchabook, event);
+    //   console.log(this.searchabook);
+    // }
 
-    onLoad() {
-      this.router.navigate(['search-book-results'],
-       {queryParams: {q: this.searchabook}});
-    }
+    // onLoad() {
+    //   this.router.navigate(['search-book-results'],
+    //    {queryParams: {q: this.searchabook}});
+    // }
 
     ngOnInit() {
   }

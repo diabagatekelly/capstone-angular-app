@@ -14,7 +14,8 @@ const routes: Routes = [
   {path: 'search-author-results', component: SearchAuthorResultsComponent},
   {path: 'search-book-results', component: SearchBookResultsComponent},
   {path: 'search-author-results/:authors', component: AuthorPageComponent},
-  {path: 'search-book-results/:books', component: BookPageComponent}
+  {path: 'search-book-results/:books', component: BookPageComponent},
+  {path: 'home/:books', component: BookPageComponent}
 ];
 
 @NgModule({

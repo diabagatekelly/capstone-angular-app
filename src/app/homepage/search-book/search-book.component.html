@@ -4,6 +4,6 @@
   </form>
 </div>
 <div>
-  <button type="submit" class="btn btn-primary mb-2"(click)="onLoad()" (click)="onSearchBook()">Search</button>
+  <a [routerLink]="['/search-book-results']" [queryParams]="{q: searchabook}"><button type="submit" class="btn btn-primary mb-2">Search</button></a>
 </div>
       

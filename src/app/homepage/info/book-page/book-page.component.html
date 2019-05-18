@@ -10,14 +10,14 @@
       </div> 
     </div>
 </nav>
-<div class="container" *ngFor="let info of bookTitle" style="margin-top: 10vh">
+<div class="container" style="margin-top: 10vh">
   <div class="row">
     <div class="col-xs-3">
-      <img src="{{info.image_url}}">
+      <img src="{{bookTitle['image_url']}}">
     </div>
     <div class="col-xs-9">
-      <div>{{info.title}}</div>
-      <div>{{info.description}}</div>
+      <div>{{bookTitle['title']}}</div>
+      <div>{{bookTitle['description']}}</div>
     </div>
   </div>
 </div>

@@ -3,7 +3,6 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { GetBookTitleService } from '../../../shared/getbooktitle.service';
 import { AuthorInfoService } from '../../../shared/author-info.service';
 import { switchMap } from 'rxjs/operators';
-import { FilterAuthorNameService } from 'src/app/shared/filterauthorname.service';
 
 @Component({
   selector: 'app-book-page',

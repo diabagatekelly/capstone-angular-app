@@ -1,58 +1,75 @@
 <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
   <div class="container">
-      <div class="row">
-          <a class="navbar-brand" routerLink="/">Book Chat</a>
-          <ul class="nav navbar-nav pull-right" routerLinkActive="active">
-              <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/about">About</a></li>
-             <li class="nav-item"><a class="nav-link">Courses</a></li>
-          </ul>
-      </div> 
+    <div class="row">
+      <a class="navbar-brand" routerLink="/">Book Chat</a>
+      <ul class="nav navbar-nav pull-right" routerLinkActive="active">
+        <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About</a>
+        </li>
+        <li class="nav-item"><a class="nav-link">Courses</a></li>
+      </ul>
     </div>
+  </div>
 </nav>
 <div class="container" style="margin-top: 10vh">
   <div class="row">
-      <div class="col-xs-6 col-xs-offset-3" style="background-color: white; padding: 2em 1em; border-radius: 1.5%">
-          <div class="card text-left">
-              <div class="card-header">
-                <ul class="nav nav-tabs card-header-tabs">
-                  <li class="nav-item" (click)="bookSearchOn()">
-                    <a class="nav-link active">Books</a>
-                  </li>
-                  <li class="nav-item" (click)="authorSearchOn()">
-                    <a class="nav-link">Authors</a>
-                  </li>
-                </ul>
+    <div
+      class="col-xs-6 col-xs-offset-3"
+      style="background-color: white; padding: 2em 1em; border-radius: 1.5%"
+    >
+      <div class="card text-left">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item" (click)="bookSearchOn()">
+              <a class="nav-link active">Books</a>
+            </li>
+            <li class="nav-item" (click)="authorSearchOn()">
+              <a class="nav-link">Authors</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <form class="form-block" style="padding-top: 2em">
+            <div class="row" [ngSwitch]="authorSearch">
+              <div *ngSwitchCase="'book-clicked'">
+                <app-search-book></app-search-book>
               </div>
-              <div class="card-body">
-                  <form class="form-block" style="padding-top: 2em">
-                    <div class="row" [ngSwitch]="authorSearch">
-                          <div *ngSwitchCase="'book-clicked'"><app-search-book></app-search-book></div>
-                         <div *ngSwitchCase="'author-clicked'"><app-search-author></app-search-author></div>   
-                         <div *ngSwitchDefault><app-search-book></app-search-book></div> 
-                        </div>
-                    </form>
+              <div *ngSwitchCase="'author-clicked'">
+                <app-search-author></app-search-author>
               </div>
+              <div *ngSwitchDefault><app-search-book></app-search-book></div>
             </div>
+          </form>
+        </div>
       </div>
-  </div>
-
-<div>
-  <div class="row text-center" *ngFor="let search of bookDetail">
-    <div>Result 1 - 20 of {{search['total-results']}}</div>
-</div>
-<div>
-    <hr>
-  </div>
-
-  <div class="row" *ngFor="let book of bookDetail[0].results[0].work">
-          <div class="col-sm-3">
-            <img src="{{book.best_book[0].image_url }}">
-          </div>
-           <a class="col-sm-9" [routerLink]="['/search-book-results/books']" [queryParams]="{authorID: book.best_book[0].author[0].id[0]._, bookID: book.best_book[0].id[0]._}">
-              <div>{{book.best_book[0].title }}</div>
-              <div>{{book.best_book[0].author[0].name }}</div>
-              <div>{{book.best_book[0].average_rating }}</div>
-          </a> 
     </div>
   </div>
+
+  <div>
+    <div class="row text-center" *ngFor="let search of bookDetail">
+      <div>Result 1 - 20 of {{ search["total-results"] }}</div>
+    </div>
+    <div>
+      <hr />
+    </div>
+
+    <div class="row" *ngFor="let book of bookDetail[0].results[0].work">
+      <div class="col-sm-3">
+        <img src="{{ book.best_book[0].image_url }}" />
+      </div>
+      <a
+        class="col-sm-9"
+        [routerLink]="['/search-book-results/books']"
+        [queryParams]="{
+          authorID: book.best_book[0].author[0].id[0]._,
+          bookID: book.best_book[0].id[0]._
+        }"
+      >
+        <div>{{ book.best_book[0].title }}</div>
+        <div>{{ book.best_book[0].author[0].name }}</div>
+        <div>{{ book.best_book[0].average_rating }}</div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,9 +1,19 @@
 <div class="col-xs-10">
-<form class="form-group mx-sm-3 mb-2">
-    <input type="text" class="form-control" id="home-search-box" placeholder="Search Authors" name="home-search" [(ngModel)]="searchauthor">
-</form>
+  <form class="form-group mx-sm-3 mb-2">
+    <input
+      type="text"
+      class="form-control"
+      id="home-search-box"
+      placeholder="Search Authors"
+      name="home-search"
+      [(ngModel)]="searchauthor"
+    />
+  </form>
 </div>
 <div>
-    <a [routerLink]="['/search-author-results']" [queryParams]="{q: searchauthor}"><button type="submit" class="btn btn-primary mb-2">Search</button></a>
+  <a
+    [routerLink]="['/search-author-results']"
+    [queryParams]="{ q: searchauthor }"
+    ><button type="submit" class="btn btn-primary mb-2">Search</button></a
+  >
 </div>
-

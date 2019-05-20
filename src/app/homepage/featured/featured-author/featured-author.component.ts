@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthorsService } from '../../../shared/goodreads-authors.service';
-import { IAuthors } from '../../../shared/authors.interface';
 
 @Component({
   selector: 'app-featured-author',
@@ -17,23 +16,7 @@ export class FeaturedAuthorComponent implements OnInit {
     this.authorService.getAuthors().subscribe(res => {
       this.authors.push(res);
       console.log(this.authors);
-  });
+    });
 
-  // ngOnInit() {
-  // this.authorService.getAuthors().subscribe(res => {
-  //   this.authors.push(res);
-
-
-
-    // this.parseString(res, (result, err) => {
-    //   if (err) {
-    //     console.log(err);
-    //   }
-    //   this.authors.push(err.GoodreadsResponse.author[0]);
-
-    //   for (length = 0; length <= 10; length++) {
-    //     this.booklist.push(err.GoodreadsResponse.author[0].books[0].book[length]);
-    //   }
-    // });
   }
 }

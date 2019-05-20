@@ -28,16 +28,16 @@ import { BookPageComponent } from './info/book-page/book-page.component';
     SearchBookComponent,
     RoutingComponents,
     BookPageComponent,
-     ],
-    imports: [
+  ],
+  imports: [
     CommonModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule
   ],
   exports: [
-      HomepageComponent
-    ],
+    HomepageComponent
+  ],
   providers: [AuthorsService, GoodreadsBooksService]
 })
 

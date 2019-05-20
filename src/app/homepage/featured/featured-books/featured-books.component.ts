@@ -17,15 +17,9 @@ export class FeaturedBooksComponent implements OnInit {
 
   featuredBook = '';
 
-  name;
-  title;
+  constructor(private nytBookService: NYTBooksService, private route: ActivatedRoute, private filterauthorname: FilterAuthorNameService) { }
 
-  authors;
-  i: number = Math.floor(Math.random() * 15);
-
-  constructor(private nytBookService: NYTBooksService, private route: ActivatedRoute, private filterauthorname: FilterAuthorNameService) {}
-
-    ngOnInit() {
+  ngOnInit() {
     this.nytBookService.getFictionBooks().subscribe(res => {
       this.fictionBooks.push(res);
       this.fictionBooks = this.fictionBooks[0].results.books;
@@ -33,37 +27,37 @@ export class FeaturedBooksComponent implements OnInit {
     });
 
     this.nytBookService.getNonfictionBooks().subscribe(result => {
-        this.nonfictionBooks.push(result);
-        this.nonfictionBooks = this.nonfictionBooks[0].results.books;
-        console.log(this.nonfictionBooks);
-  });
+      this.nonfictionBooks.push(result);
+      this.nonfictionBooks = this.nonfictionBooks[0].results.books;
+      console.log(this.nonfictionBooks);
+    });
 
     this.nytBookService.getPictureBooks().subscribe(result => {
-    this.childrenBooks.push(result);
-    this.childrenBooks = this.childrenBooks[0].results.books;
-    console.log(this.childrenBooks);
-});
+      this.childrenBooks.push(result);
+      this.childrenBooks = this.childrenBooks[0].results.books;
+      console.log(this.childrenBooks);
+    });
 
     this.nytBookService.getYoungAdultBooks().subscribe(result => {
-  this.youngAdultBooks.push(result);
-  this.youngAdultBooks = this.youngAdultBooks[0].results.books;
-  console.log(this.youngAdultBooks);
-});
+      this.youngAdultBooks.push(result);
+      this.youngAdultBooks = this.youngAdultBooks[0].results.books;
+      console.log(this.youngAdultBooks);
+    });
   }
 
-    onFiction() {
+  onFiction() {
     this.featuredBook = 'fiction';
-      }
+  }
 
-    onNonfiction() {
+  onNonfiction() {
     this.featuredBook = 'nonfiction';
-      }
+  }
 
-    onChildren() {
+  onChildren() {
     this.featuredBook = 'children';
-      }
+  }
 
-    onYoungAdults() {
+  onYoungAdults() {
     this.featuredBook = 'youngadult';
-      }
+  }
 }

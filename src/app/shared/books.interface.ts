@@ -5,8 +5,5 @@ export class IBooks {
     goodreads: string;
     description: string;
     average_rating: number;
-   // results: object;
     totalresults: number;
-     // ratings_count: number;
-    // reviews_widget: string;
 }

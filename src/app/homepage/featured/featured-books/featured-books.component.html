@@ -1,40 +1,133 @@
-        <div class="container" style="height: 100vh; width: 100vw; margin-bottom: 2em">
-            <div class="row text-center">
-                <h2>FEATURED BOOKS</h2>
-            </div>
-            <div class=" row text-center" style="margin: 2em 0">
-                <button class="btn btn-default" type="button" style="margin-right: 1em" (click)="onFiction()">Fiction</button>
-                <button class="btn btn-default" type="button" style="margin-right: 1em" (click)="onNonfiction()">Non-Fiction</button>
-                <button class="btn btn-default" type="button" style="margin-right: 1em" (click)="onYoungAdults()">Young Adult</button>
-                <button class="btn btn-default" type="button" style="margin-right: 1em" (click)="onChildren()">Children</button>
-            </div>
-            <div class="carousel-inner text-center" style="width: 100vw; height: 80vh">
-                <div class="item active" [ngSwitch]="featuredBook">
-                    <div class="row">
-                        <div class="col-sm-3" *ngFor="let book of fictionBooks | slice:0:8" style="margin: 0; padding: 0; width: 51vh"> 
-                            <a *ngSwitchCase="'fiction'" style="height: 39vh; width: 100%; padding: 0; margin: 0" [routerLink]="['/home/books']" [queryParams]="{isbn: book.primary_isbn13}"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3" *ngFor="let book of nonfictionBooks | slice:0:8" style="margin: 0; padding: 0; width: 51vh"> 
-                            <a *ngSwitchCase="'nonfiction'" style="height: 39vh; width: 100%; padding: 0; margin: 0" [routerLink]="['/home/books']" [queryParams]="{isbn: book.primary_isbn13}"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3" *ngFor="let book of childrenBooks | slice:0:8" style="margin: 0; padding: 0; width: 51vh"> 
-                            <a *ngSwitchCase="'children'" style="height: 39vh; width: 100%; padding: 0; margin: 0" [routerLink]="['/home/books']" [queryParams]="{isbn: book.primary_isbn13}"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3" *ngFor="let book of youngAdultBooks | slice:0:8" style="margin: 0; padding: 0; width: 51vh"> 
-                            <a *ngSwitchCase="'youngadult'" style="height: 39vh; width: 100%; padding: 0; margin: 0" [routerLink]="['/home/books']" [queryParams]="{isbn: book.primary_isbn13}"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></a>
-                        </div>
-                        </div>
-                            <div class="row">
-                        <div class="col-sm-3" *ngFor="let book of fictionBooks | slice:0:8" style="margin: 0; padding: 0; width: 51vh"> 
-                            <a *ngSwitchDefault style="height: 39vh; width: 100%; padding: 0; margin: 0" [routerLink]="['/home/books']" [queryParams]="{isbn: book.primary_isbn13}"><img src="{{ book.book_image }}" class="img-responsive" style="width: 100%; height: 39vh;"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="container" style="height: 100vh; width: 100vw; margin-bottom: 2em">
+  <div class="row text-center">
+    <h2>FEATURED BOOKS</h2>
+  </div>
+  <div class=" row text-center" style="margin: 2em 0">
+    <button
+      class="btn btn-default"
+      type="button"
+      style="margin-right: 1em"
+      (click)="onFiction()"
+    >
+      Fiction
+    </button>
+    <button
+      class="btn btn-default"
+      type="button"
+      style="margin-right: 1em"
+      (click)="onNonfiction()"
+    >
+      Non-Fiction
+    </button>
+    <button
+      class="btn btn-default"
+      type="button"
+      style="margin-right: 1em"
+      (click)="onYoungAdults()"
+    >
+      Young Adult
+    </button>
+    <button
+      class="btn btn-default"
+      type="button"
+      style="margin-right: 1em"
+      (click)="onChildren()"
+    >
+      Children
+    </button>
+  </div>
+  <div class="carousel-inner text-center" style="width: 100vw; height: 80vh">
+    <div class="item active" [ngSwitch]="featuredBook">
+      <div class="row">
+        <div
+          class="col-sm-3"
+          *ngFor="let book of fictionBooks | slice: 0:8"
+          style="margin: 0; padding: 0; width: 51vh"
+        >
+          <a
+            *ngSwitchCase="'fiction'"
+            style="height: 39vh; width: 100%; padding: 0; margin: 0"
+            [routerLink]="['/home/books']"
+            [queryParams]="{ isbn: book.primary_isbn13 }"
+            ><img
+              src="{{ book.book_image }}"
+              class="img-responsive"
+              style="width: 100%; height: 39vh;"
+          /></a>
         </div>
+      </div>
+      <div class="row">
+        <div
+          class="col-sm-3"
+          *ngFor="let book of nonfictionBooks | slice: 0:8"
+          style="margin: 0; padding: 0; width: 51vh"
+        >
+          <a
+            *ngSwitchCase="'nonfiction'"
+            style="height: 39vh; width: 100%; padding: 0; margin: 0"
+            [routerLink]="['/home/books']"
+            [queryParams]="{ isbn: book.primary_isbn13 }"
+            ><img
+              src="{{ book.book_image }}"
+              class="img-responsive"
+              style="width: 100%; height: 39vh;"
+          /></a>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="col-sm-3"
+          *ngFor="let book of childrenBooks | slice: 0:8"
+          style="margin: 0; padding: 0; width: 51vh"
+        >
+          <a
+            *ngSwitchCase="'children'"
+            style="height: 39vh; width: 100%; padding: 0; margin: 0"
+            [routerLink]="['/home/books']"
+            [queryParams]="{ isbn: book.primary_isbn13 }"
+            ><img
+              src="{{ book.book_image }}"
+              class="img-responsive"
+              style="width: 100%; height: 39vh;"
+          /></a>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="col-sm-3"
+          *ngFor="let book of youngAdultBooks | slice: 0:8"
+          style="margin: 0; padding: 0; width: 51vh"
+        >
+          <a
+            *ngSwitchCase="'youngadult'"
+            style="height: 39vh; width: 100%; padding: 0; margin: 0"
+            [routerLink]="['/home/books']"
+            [queryParams]="{ isbn: book.primary_isbn13 }"
+            ><img
+              src="{{ book.book_image }}"
+              class="img-responsive"
+              style="width: 100%; height: 39vh;"
+          /></a>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="col-sm-3"
+          *ngFor="let book of fictionBooks | slice: 0:8"
+          style="margin: 0; padding: 0; width: 51vh"
+        >
+          <a
+            *ngSwitchDefault
+            style="height: 39vh; width: 100%; padding: 0; margin: 0"
+            [routerLink]="['/home/books']"
+            [queryParams]="{ isbn: book.primary_isbn13 }"
+            ><img
+              src="{{ book.book_image }}"
+              class="img-responsive"
+              style="width: 100%; height: 39vh;"
+          /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

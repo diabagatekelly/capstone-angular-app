@@ -10,7 +10,7 @@ export class AuthorsService {
   url =
     'https://mighty-beach-cg-cors-48446.herokuapp.com/https://www.goodreads.com/author/show/941441?format=xml&key=oybtOOeDZcd9cbsJTJCTg';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAuthors() {
     return this.http.get(this.url, { responseType: 'text' }).pipe(

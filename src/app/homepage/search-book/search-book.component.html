@@ -1,5 +1,5 @@
-<div class="col-xs-10">
-  <form class="form-group mx-sm-3 mb-2">
+<div class="col">
+  <div class="input-group">
     <input
       type="text"
       class="form-control"
@@ -7,11 +7,12 @@
       placeholder="Search Books"
       name="home-search"
       [(ngModel)]="searchabook"
-    />
-  </form>
+    /> 
+    <span class="input-group-btn"><a [routerLink]="['/search-book-results']" [queryParams]="{ q: searchabook }">
+      <button type="submit" class="btn btn-primary">Search</button></a></span>
+  </div>
 </div>
-<div>
-  <a [routerLink]="['/search-book-results']" [queryParams]="{ q: searchabook }"
-    ><button type="submit" class="btn btn-primary mb-2">Search</button></a
-  >
-</div>
+
+
+
+

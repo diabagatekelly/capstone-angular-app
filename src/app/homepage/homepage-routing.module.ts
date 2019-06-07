@@ -8,9 +8,9 @@ import { AuthorPageComponent } from '../homepage/info/author-page/author-page.co
 import { BookPageComponent } from '../homepage/info/book-page/book-page.component';
 
 const routes: Routes = [
-  // {path: '', redirectTo: '', pathMatch: 'full'},
-  { path: '', component: HomepageComponent },
-  // {path: 'about', component: AboutComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', component: HomepageComponent },
+  {path: 'about', component: AboutComponent},
   { path: 'search-author-results', component: SearchAuthorResultsComponent },
   { path: 'search-book-results', component: SearchBookResultsComponent },
   { path: 'search-author-results/:authors', component: AuthorPageComponent },

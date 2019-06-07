@@ -15,6 +15,9 @@ import { SearchAuthorComponent } from './search-author/search-author.component';
 import { SearchBookComponent } from './search-book/search-book.component';
 import { GoodreadsBooksService } from '../shared/goodreads-books.service';
 import { BookPageComponent } from './info/book-page/book-page.component';
+// import { CarouselComponent, CarouselItemElement } from '../shared/carousel.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselDirective } from '../shared/carousel.directive';
 
 @NgModule({
   declarations: [
@@ -28,12 +31,16 @@ import { BookPageComponent } from './info/book-page/book-page.component';
     SearchBookComponent,
     RoutingComponents,
     BookPageComponent,
+    CarouselDirective
+    // CarouselComponent,
+    // CarouselItemElement,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   exports: [
     HomepageComponent

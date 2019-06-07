@@ -1,20 +1,51 @@
-.off {
-    display: none;
+.position {
+  position: relative;
+  top: 15%;
+  text-align: center;
 }
 
-.on {
-    display: block;
+.nav-noDropDown {
+  margin-top: 0;
 }
 
-.book-off {
-    display: none;
-}   
-
-.book-on {
-    display: block;
+.nav-dropDown {
+  margin-top: 10em;
 }
 
+.jumbotron {
+  background: url('../../../../images/header-img.jpg') no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
 
+.line-style {
+    border-top: 5px double #333;
+}
 
+.searchbox-style {
+  background-color: white;
+  padding: 2em 1em; 
+  border-radius: 1.5%;
+}
 
+.card-body-style {
+  padding-top: 2em;
+}
+
+.input-width {
+  width: 100%;
+}
+
+@media only screen and (max-width: 575px) {
+  .searchbox-style {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .searchbox-style {
+    margin: 0 auto;
+    width: 75%;
+  }
+}
 

@@ -31,9 +31,7 @@ import { CarouselDirective } from '../shared/carousel.directive';
     SearchBookComponent,
     RoutingComponents,
     BookPageComponent,
-    CarouselDirective
-    // CarouselComponent,
-    // CarouselItemElement,
+    CarouselDirective,
   ],
   imports: [
     CommonModule,

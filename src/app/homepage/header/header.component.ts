@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,18 +8,6 @@ import { Component, OnInit, HostListener } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
   authorSearch = '';
-  show = false;
-  dropDownMenu = '';
-  visible = 'yes';
-
-  toggleCollapse() {
-    this.show = !this.show;
-    if (this.dropDownMenu === '') {
-      this.dropDownMenu = 'down';
-    } else {
-    this.dropDownMenu = '';
-    }
-  }
 
   authorSearchOn() {
     this.authorSearch = 'author-clicked';
@@ -35,4 +23,5 @@ export class HeaderComponent implements OnInit {
   }
 
 }
+
 

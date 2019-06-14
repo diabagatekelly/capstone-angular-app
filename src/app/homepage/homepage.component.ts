@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
+  newMargin = '';
 
   constructor() {
   }
+
 
   ngOnInit() {
   }

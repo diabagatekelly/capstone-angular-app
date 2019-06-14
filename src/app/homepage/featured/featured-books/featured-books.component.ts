@@ -1,4 +1,13 @@
-import { Component, OnInit, Input, HostListener } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  HostListener,
+  OnChanges,
+  SimpleChange,
+  SimpleChanges,
+  AfterContentChecked
+} from '@angular/core';
 import { NYTBooksService } from '../../../shared/nyt-featured-books.service';
 import { ActivatedRoute } from '@angular/router';
 import { FilterAuthorNameService } from '../../../shared/filterauthorname.service';
@@ -9,11 +18,11 @@ import { FilterAuthorNameService } from '../../../shared/filterauthorname.servic
   styleUrls: ['./featured-books.component.css']
 })
 export class FeaturedBooksComponent implements OnInit {
-
   fictionBooks = [];
   fictionBooks1 = [];
   fictionBooks2 = [];
   fictionBooks3 = [];
+  fictionBooks4 = [];
   fictionBooksFinal = [];
 
   nonfictionBooks = [];
@@ -21,25 +30,32 @@ export class FeaturedBooksComponent implements OnInit {
   nonfictionBooks1 = [];
   nonfictionBooks2 = [];
   nonfictionBooks3 = [];
+  nonfictionBooks4 = [];
   nonfictionBooksFinal = [];
 
   childrenBooks = [];
   childrenBooks1 = [];
   childrenBooks2 = [];
   childrenBooks3 = [];
+  childrenBooks4 = [];
   childrenBooksFinal = [];
 
   youngAdultBooks = [];
   youngAdultBooks1 = [];
   youngAdultBooks2 = [];
   youngAdultBooks3 = [];
+  youngAdultBooks4 = [];
   youngAdultBooksFinal = [];
 
   featuredBook = '';
 
   public innerWidth: any;
 
-  constructor(private nytBookService: NYTBooksService, private route: ActivatedRoute, private filterauthorname: FilterAuthorNameService) { }
+  constructor(
+    private nytBookService: NYTBooksService,
+    private route: ActivatedRoute,
+    private filterauthorname: FilterAuthorNameService
+  ) {}
 
   ngOnInit() {
     this.nytBookService.getFictionBooks().subscribe(res => {
@@ -55,10 +71,14 @@ export class FeaturedBooksComponent implements OnInit {
         this.fictionBooks2.push(slice);
         j++;
       }
-
+      for (let j = 0; j <= this.fictionBooks.length - 1; j++) {
+        const slice = this.fictionBooks.slice(j, j + 3);
+        this.fictionBooks3.push(slice);
+        j = j + 2;
+      }
       for (let j = 0; j <= this.fictionBooks.length - 1; j++) {
         const slice = this.fictionBooks.slice(j, j + 4);
-        this.fictionBooks3.push(slice);
+        this.fictionBooks4.push(slice);
         j = j + 3;
       }
     });
@@ -76,10 +96,14 @@ export class FeaturedBooksComponent implements OnInit {
         this.nonfictionBooks2.push(slice);
         j++;
       }
-
+      for (let j = 0; j <= this.nonfictionBooks.length - 1; j++) {
+        const slice = this.nonfictionBooks.slice(j, j + 3);
+        this.nonfictionBooks3.push(slice);
+        j = j + 2;
+      }
       for (let j = 0; j <= this.nonfictionBooks.length - 1; j++) {
         const slice = this.nonfictionBooks.slice(j, j + 4);
-        this.nonfictionBooks3.push(slice);
+        this.nonfictionBooks4.push(slice);
         j = j + 3;
       }
     });
@@ -96,10 +120,14 @@ export class FeaturedBooksComponent implements OnInit {
         this.childrenBooks2.push(slice);
         j++;
       }
-
+      for (let j = 0; j <= this.childrenBooks.length - 1; j++) {
+        const slice = this.childrenBooks.slice(j, j + 3);
+        this.childrenBooks3.push(slice);
+        j = j + 2;
+      }
       for (let j = 0; j <= this.childrenBooks.length - 1; j++) {
         const slice = this.childrenBooks.slice(j, j + 4);
-        this.childrenBooks3.push(slice);
+        this.childrenBooks4.push(slice);
         j = j + 3;
       }
     });
@@ -117,10 +145,14 @@ export class FeaturedBooksComponent implements OnInit {
         this.youngAdultBooks2.push(slice);
         j++;
       }
-
+      for (let j = 0; j <= this.youngAdultBooks.length - 1; j++) {
+        const slice = this.youngAdultBooks.slice(j, j + 3);
+        this.youngAdultBooks3.push(slice);
+        j = j + 2;
+      }
       for (let j = 0; j <= this.youngAdultBooks.length - 1; j++) {
         const slice = this.youngAdultBooks.slice(j, j + 4);
-        this.youngAdultBooks3.push(slice);
+        this.youngAdultBooks4.push(slice);
         j = j + 3;
       }
     });
@@ -131,16 +163,21 @@ export class FeaturedBooksComponent implements OnInit {
       this.nonfictionBooksFinal = this.nonfictionBooks1;
       this.childrenBooksFinal = this.childrenBooks1;
       this.youngAdultBooksFinal = this.youngAdultBooks1;
-    } else if (this.innerWidth < 900) {
+    } else if (this.innerWidth >= 600 && this.innerWidth < 900) {
       this.fictionBooksFinal = this.fictionBooks2;
       this.nonfictionBooksFinal = this.nonfictionBooks2;
       this.childrenBooksFinal = this.childrenBooks2;
       this.youngAdultBooksFinal = this.youngAdultBooks2;
-    } else if (this.innerWidth >= 900) {
+    } else if (this.innerWidth >= 900 && this.innerWidth < 1100) {
       this.fictionBooksFinal = this.fictionBooks3;
       this.nonfictionBooksFinal = this.nonfictionBooks3;
       this.childrenBooksFinal = this.childrenBooks3;
       this.youngAdultBooksFinal = this.youngAdultBooks3;
+    } else if (this.innerWidth >= 1100) {
+      this.fictionBooksFinal = this.fictionBooks4;
+      this.nonfictionBooksFinal = this.nonfictionBooks4;
+      this.childrenBooksFinal = this.childrenBooks4;
+      this.youngAdultBooksFinal = this.youngAdultBooks4;
     }
   }
 
@@ -152,16 +189,21 @@ export class FeaturedBooksComponent implements OnInit {
       this.nonfictionBooksFinal = this.nonfictionBooks1;
       this.childrenBooksFinal = this.childrenBooks1;
       this.youngAdultBooksFinal = this.youngAdultBooks1;
-    } else if (this.innerWidth < 900) {
+    } else if (this.innerWidth >= 600 && this.innerWidth < 900) {
       this.fictionBooksFinal = this.fictionBooks2;
       this.nonfictionBooksFinal = this.nonfictionBooks2;
       this.childrenBooksFinal = this.childrenBooks2;
       this.youngAdultBooksFinal = this.youngAdultBooks2;
-    } else if (this.innerWidth >= 900) {
+    } else if (this.innerWidth >= 900 && this.innerWidth < 1100) {
       this.fictionBooksFinal = this.fictionBooks3;
       this.nonfictionBooksFinal = this.nonfictionBooks3;
       this.childrenBooksFinal = this.childrenBooks3;
       this.youngAdultBooksFinal = this.youngAdultBooks3;
+    } else if (this.innerWidth >= 1100) {
+      this.fictionBooksFinal = this.fictionBooks4;
+      this.nonfictionBooksFinal = this.nonfictionBooks4;
+      this.childrenBooksFinal = this.childrenBooks4;
+      this.youngAdultBooksFinal = this.youngAdultBooks4;
     }
   }
 

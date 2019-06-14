@@ -1,24 +1,16 @@
-// import { Directive, TemplateRef } from '@angular/core';
-
-// @Directive({
-//   selector: '[carouselItem]'
-// })
-// export class CarouselItemDirective {
-
-//   constructor( public tpl: TemplateRef<any> ) {
-//   }
-
-// }
-
 import { Directive, Input, ElementRef, OnInit } from '@angular/core';
-import { AnimationBuilder, AnimationFactory, style, animate } from '@angular/animations';
+import {
+  AnimationBuilder,
+  AnimationFactory,
+  style,
+  animate
+} from '@angular/animations';
 
 @Directive({
   selector: '.carousel-inner',
-   exportAs: 'Carousel'
+  exportAs: 'Carousel'
 })
 export class CarouselDirective implements OnInit {
-
   @Input() animationDuration = 500;
 
   private slideLeft: AnimationFactory;
@@ -26,20 +18,22 @@ export class CarouselDirective implements OnInit {
   private slideInLeft: AnimationFactory;
   private slideInRight: AnimationFactory;
 
-  constructor(private el: ElementRef, private _builder: AnimationBuilder) {
-  }
+  constructor(private el: ElementRef, private _builder: AnimationBuilder) {}
 
   ngOnInit() {
     this.slideLeft = this._builder.build([
       style({ transform: 'translateX(0)' }),
-      animate(this.animationDuration, style({ transform: 'translateX(-100%)' })),
-      style({ transform: 'translateX(0)' }),
+      animate(
+        this.animationDuration,
+        style({ transform: 'translateX(-100%)' })
+      ),
+      style({ transform: 'translateX(0)' })
     ]);
 
     this.slideRight = this._builder.build([
       style({ transform: 'translateX(0)' }),
       animate(this.animationDuration, style({ transform: 'translateX(100%)' })),
-      style({ transform: 'translateX(0)' }),
+      style({ transform: 'translateX(0)' })
     ]);
 
     this.slideInLeft = this._builder.build([
@@ -56,31 +50,38 @@ export class CarouselDirective implements OnInit {
   }
 
   next(steps) {
-      let active = this.el.nativeElement.querySelectorAll('.carousel-item.active');
-      let inactive = this.el.nativeElement.querySelector('.carousel-item:not(.active)');
-      // Start the animation
-      this.animateAll(active, this.slideLeft);
-      // Start the slide in animation for the next element
-      this.preMoveElement(inactive);
-      this.slideInLeft.create(inactive).play();
+    let active = this.el.nativeElement.querySelectorAll(
+      '.carousel-item.active'
+    );
+    let inactive = this.el.nativeElement.querySelector(
+      '.carousel-item:not(.active)'
+    );
+    // Start the animation
+    this.animateAll(active, this.slideLeft);
+    // Start the slide in animation for the next element
+    this.preMoveElement(inactive);
+    this.slideInLeft.create(inactive).play();
 
-
-      setTimeout(() => {
-        // Move the last element to start and make it active.
-        active = this.el.nativeElement.querySelectorAll('.carousel-item.active');
-        inactive = this.el.nativeElement.querySelector('.carousel-item:not(.active)');
-        active[0].classList.remove('active');
-        this.el.nativeElement.insertBefore(active[0], null);
-        inactive.classList.add('active');
-        if (steps && steps - 1 > 0) {
-          this.next(steps - 1);
-        }
-      }, this.animationDuration);
-   }
-
+    setTimeout(() => {
+      // Move the last element to start and make it active.
+      active = this.el.nativeElement.querySelectorAll('.carousel-item.active');
+      inactive = this.el.nativeElement.querySelector(
+        '.carousel-item:not(.active)'
+      );
+      active[0].classList.remove('active');
+      // Move the last element to the start, and make it active
+      this.el.nativeElement.insertBefore(active[0], null);
+      inactive.classList.add('active');
+      if (steps && steps - 1 > 0) {
+        this.next(steps - 1);
+      }
+    }, this.animationDuration);
+  }
 
   prev(steps) {
-    const active = this.el.nativeElement.querySelectorAll('.carousel-item.active');
+    const active = this.el.nativeElement.querySelectorAll(
+      '.carousel-item.active'
+    );
     const children = this.el.nativeElement.children;
     const lastChild = children[children.length - 1];
     // Start the animation
@@ -88,7 +89,6 @@ export class CarouselDirective implements OnInit {
     // Start the slide in animation for the next element
     this.preMoveElement(lastChild);
     this.slideInRight.create(lastChild).play();
-
 
     setTimeout(() => {
       // Remove the active class
@@ -116,6 +116,4 @@ export class CarouselDirective implements OnInit {
       element.style = null;
     }, this.animationDuration);
   }
-
 }
-

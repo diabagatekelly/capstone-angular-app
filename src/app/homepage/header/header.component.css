@@ -1,21 +1,13 @@
+.jumbotron {
+  background: url('../../../assets/images/header-img.jpg') no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
 .position {
   position: relative;
   top: 15%;
   text-align: center;
-}
-
-.nav-noDropDown {
-  margin-top: 0;
-}
-
-.nav-dropDown {
-  margin-top: 10em;
-}
-
-.jumbotron {
-  background: url('../../../../images/header-img.jpg') no-repeat;
-  background-size: cover;
-  height: 100vh;
 }
 
 .line-style {

@@ -16,11 +16,13 @@ import { GetBookTitleService } from './shared/getbooktitle.service';
 import { FilterAuthorNameService } from './shared/filterauthorname.service';
 import { GetAuthorNameService } from './shared/getauthorname.service';
 import { AuthorInfoService } from './shared/author-info.service';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent
     ],
   imports: [
     BrowserModule,
@@ -30,7 +32,7 @@ import { AuthorInfoService } from './shared/author-info.service';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [GoodreadsBooksService, GetBookTitleService, FilterAuthorNameService, GetAuthorNameService, AuthorInfoService],
   bootstrap: [AppComponent]

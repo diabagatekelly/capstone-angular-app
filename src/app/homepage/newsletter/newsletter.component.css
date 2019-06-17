@@ -1,0 +1,28 @@
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.input-group {
+  margin: 50px auto;
+}
+
+@media only screen and (max-width: 768px) {
+  h2 {
+    margin-top: 15px;
+  }
+
+  .input-group {
+    margin: 10px auto;
+  }
+
+  .col-xs-8 {
+    width: 100%;
+  }
+
+  .col-xs-offset-2 {
+    margin-left: 7%;
+    margin-right: 5%;
+  }
+}

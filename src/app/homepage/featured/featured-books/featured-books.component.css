@@ -1,5 +1,11 @@
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 50px;
+}
+
 .button-row-style {
-  margin: 2em 0;
+  margin: 50px auto;
   justify-content: center;
 }
 
@@ -48,6 +54,16 @@
 
   .col-carousel {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  h2 {
+    margin-top: 15px;
+  }
+
+  .button-row-style {
+    margin: 10px auto;
   }
 }
 

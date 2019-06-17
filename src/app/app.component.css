@@ -1,9 +1,25 @@
-button {
-    margin: 0 40px 0 0;
-    }
-    
-.navbar-nav {
-margin: 1px -15px;
-text-align: center;
+.navbar-brand {
+  margin-right: auto;
 }
 
+.invisible-lg {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  ul#icons {
+    display: flex;
+    flex-direction: row;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+    .invisible-sm {
+      display: none;
+    }
+  
+    .invisible-lg {
+      display: block;
+    }
+  }

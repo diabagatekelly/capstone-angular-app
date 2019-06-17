@@ -1,10 +1,9 @@
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: black;
-  border-radius: 20%;
+h2 {
+  margin: 50px auto 0;
 }
 
-h2, h4 {
+h2,
+h4 {
   text-transform: uppercase;
 }
 
@@ -12,20 +11,36 @@ p#imageintro {
   margin: 50px auto;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 870px) {
-    .carousel {
-        padding-top: 40px;
-        }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+  border-radius: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+  h2 {
+    margin: 15px auto;
   }
+
+  p#imageintro {
+    margin: 10px auto;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 870px) {
+  .carousel {
+    padding-top: 40px;
+  }
+}
 
 @media only screen and (min-width: 1025px) {
-    .height {
-        padding: 5%;
-    }
+  .height {
+    padding: 5%;
   }
+}
 
-  @media only screen and (min-width: 1210px) {
-    .height {
-        padding: 7%;
-    }
+@media only screen and (min-width: 1210px) {
+  .height {
+    padding: 7%;
   }
+}

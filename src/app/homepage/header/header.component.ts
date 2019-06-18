@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, transition, useAnimation, state, style, animate } from '@angular/animations';
+import { trigger, transition, useAnimation } from '@angular/animations';
 import { bounceInRight } from 'ng-animate';
 
 @Component({
@@ -15,28 +15,21 @@ import { bounceInRight } from 'ng-animate';
         c: '-10px',
         d: '5px', }
     }))
-  ]),
-  ],
+  ])
+  ]
 })
 
 export class HeaderComponent implements OnInit {
   bounce: any;
 
-  authorState = '';
-  bookState = '';
-
   authorSearch = '';
 
   authorSearchOn() {
     this.authorSearch = 'author-clicked';
-    this.authorState = this.authorState === 'active' ? '' : 'active';
-    this.bookState = '';
   }
 
   bookSearchOn() {
     this.authorSearch = 'book-clicked';
-    this.bookState = this.bookState === 'active' ? '' : 'active';
-    this.authorState = '';
   }
 
   constructor() { }

@@ -16,7 +16,7 @@
   font-family: 'Marck Script', cursive, sans-serif;
 }
 
-@keyframes slideInFromLeft {
+@keyframes slideInFromTop {
   0% {
     transform: translateY(-100vh);
   }
@@ -27,21 +27,58 @@
 
 .lead {
   font-style: italic; 
-  animation: 5s ease-in 0s 1 slideInFromLeft;
+  animation: 5s ease-in 0s 1 slideInFromTop;
+}
+
+@keyframes fadeInLine {
+  0% {
+    opacity: 0;
+  }
+
+  /* Finish changes by here */
+  90% {
+    opacity: 0;
+  }
+
+  /* Between 20% and 100%, nothing changes */
+  100% {
+   opacity: 1;
+  }
 }
 
 .line-style {
     border-top: 5px double #333;
+    animation: fadeInLine 8s ease-in;
+}
+
+
+@keyframes moveSearchBox {
+  0% {
+    transform: translate(-200vh, 0);
+  }
+
+  /* Finish changes by here */
+  50% {
+    transform: translate(-200vh, 0);
+  }
+
+  /* Between 20% and 100%, nothing changes */
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 .searchbox-style {
   background-color: white;
   padding: 2em 1em; 
   border-radius: 1.5%;
+  animation: moveSearchBox 7s ease-in;
 }
 
 .active {
-  background-color: white;
+  color: #495057;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
 }
 
 .card-body-style {

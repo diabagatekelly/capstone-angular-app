@@ -1,3 +1,11 @@
+button, .navbar-brand,.nav-item {
+  transition: all 200ms ease 100ms;
+}
+
+button:hover, .navbar-brand:hover, .nav-item:hover {
+  transform: translate(1%, 1%) scale(1.10);
+}
+
 .navbar-brand {
   margin-right: auto;
 }

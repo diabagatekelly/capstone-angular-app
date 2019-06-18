@@ -11,6 +11,25 @@
   text-align: center;
 }
 
+.display-3 {
+  text-transform: capitalize;
+  font-family: 'Marck Script', cursive, sans-serif;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.lead {
+  font-style: italic; 
+  animation: 5s ease-in 0s 1 slideInFromLeft;
+}
+
 .line-style {
     border-top: 5px double #333;
 }
@@ -19,6 +38,10 @@
   background-color: white;
   padding: 2em 1em; 
   border-radius: 1.5%;
+}
+
+.active {
+  background-color: white;
 }
 
 .card-body-style {

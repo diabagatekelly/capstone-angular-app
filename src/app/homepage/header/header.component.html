@@ -1,17 +1,17 @@
 <div class="jumbotron vh-100">
   <div class="position container">
-    <h1 class="display-3 text-uppercase">Fluid jumbotron</h1>
-    <p class="lead">Some text</p>
+    <h1 [@bounce]="bounce" class="display-3">“Never put off till tomorrow the book you can read today.”</h1>
+    <p class="lead">– Holbrook Jackson</p>
     <hr class="line-style">
         <div class="searchbox-style col-sm-8 col-sm-offset-2">
         <div class="card text-left"> 
           <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item" (click)="bookSearchOn()">
-                <a class="nav-link active">Books</a>
+                <a [ngStyle]="{'background-color':bookState === 'active' ? 'white' : 'inherit' }" class="nav-link">Books</a>
               </li>
               <li class="nav-item" (click)="authorSearchOn()">
-                <a class="nav-link">Authors</a>
+                <a [ngStyle]="{'background-color':authorState === 'active' ? 'white' : 'inherit' }" class="nav-link">Authors</a>
               </li>
             </ul>
           </div>

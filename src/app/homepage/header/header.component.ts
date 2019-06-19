@@ -21,7 +21,6 @@ import { bounceInRight } from 'ng-animate';
 
 export class HeaderComponent implements OnInit {
   bounce: any;
-
   authorSearch = '';
 
   authorSearchOn() {

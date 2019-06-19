@@ -1,0 +1,22 @@
+.fixed-parallax .row {
+  position: relative;
+  height: 100%;
+  padding-bottom: 50px;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.fixed-parallax .row.one {
+  padding-bottom: 0;
+}
+.fixed-parallax .row.two {
+  background-image: url("https://get.pxhere.com/photo/background-white-plastic-isolated-colorful-object-alphabets-play-education-childhood-cut-toy-cutout-learn-letters-language-studio-life-vertical-shot-still-colors-knowledge-pieces-text-alphabet-concept-word-letter-yellow-wood-school-wooden-sign-design-color-symbol-green-preschool-red-blue-shape-pink-font-number-Colorfulness-smile-heart-1576183.jpg");
+}
+.fixed-parallax .row.three {
+  background-image: url("../../assets/images/memphis-mini-dark.png");
+}
+
+.fixed-parallax .row.four {
+  background-image: url("https://get.pxhere.com/photo/background-white-plastic-isolated-colorful-object-alphabets-play-education-childhood-cut-toy-cutout-learn-letters-language-studio-life-vertical-shot-still-colors-knowledge-pieces-text-alphabet-concept-word-letter-yellow-wood-school-wooden-sign-design-color-symbol-green-preschool-red-blue-shape-pink-font-number-Colorfulness-smile-heart-1576183.jpg");
+}

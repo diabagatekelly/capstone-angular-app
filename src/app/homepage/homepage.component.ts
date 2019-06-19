@@ -8,10 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class HomepageComponent implements OnInit {
   newMargin = '';
 
-  constructor() {
-  }
-
-
   ngOnInit() {
   }
 

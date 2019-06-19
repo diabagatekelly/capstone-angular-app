@@ -22,7 +22,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent
+    FooterComponent,
     ],
   imports: [
     BrowserModule,
@@ -34,7 +34,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [GoodreadsBooksService, GetBookTitleService, FilterAuthorNameService, GetAuthorNameService, AuthorInfoService],
+  providers: [GoodreadsBooksService, GetBookTitleService, FilterAuthorNameService, GetAuthorNameService,
+    AuthorInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,7 +15,6 @@ import { SearchAuthorComponent } from './search-author/search-author.component';
 import { SearchBookComponent } from './search-book/search-book.component';
 import { GoodreadsBooksService } from '../shared/goodreads-books.service';
 import { BookPageComponent } from './info/book-page/book-page.component';
-// import { CarouselComponent, CarouselItemElement } from '../shared/carousel.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselDirective } from '../shared/carousel.directive';
 import { NewsletterComponent } from './newsletter/newsletter.component';
@@ -40,7 +39,7 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   exports: [
     HomepageComponent

@@ -69,10 +69,10 @@
 }
 
 .searchbox-style {
-  background-color: white;
+  background-color: lightgray;
   padding: 2em 1em; 
   border-radius: 1.5%;
-  animation: moveSearchBox 7s ease-in;
+  animation: moveSearchBox 6s ease-in;
 }
 
 .active {

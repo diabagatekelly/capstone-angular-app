@@ -1,7 +1,25 @@
+.container {
+  border: 5px solid white;
+  background-color: white;
+  margin-bottom: 100px;
+}
+
+.btn-primary {
+  background-color: #76cb8f;
+  border: 1px solid #ccc;
+  color: black;
+}
+
 h2 {
   text-transform: uppercase;
   text-align: center;
   margin-top: 50px;
+}
+
+[data-aos="slide-down"] {
+  transform: translate3d(0,-20%,0);
+  /* opacity: 0;
+  transition-property: transform, opacity; */
 }
 
 .row {
@@ -10,6 +28,10 @@ h2 {
 
 .input-group {
   margin: 50px auto;
+}
+
+button:hover {
+  transform: translate(1%, 1%) scale(1.10);
 }
 
 @media only screen and (max-width: 768px) {
@@ -28,5 +50,9 @@ h2 {
   .col-xs-offset-2 {
     margin-left: 7%;
     margin-right: 5%;
+  }
+
+  .container {
+    margin-bottom: 25px;
   }
 }

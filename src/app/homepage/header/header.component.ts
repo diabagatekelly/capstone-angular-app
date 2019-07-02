@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { bounceInRight } from 'ng-animate';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-header',
@@ -34,6 +35,10 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    AOS.init({
+      duration: 500,
+      easing: 'ease-in'
+    });
   }
 
 }

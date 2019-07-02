@@ -1,6 +1,6 @@
 .container-fluid {
   background-color: black;
-  color: beige;
+  color: white;
 }
 
 .col {
@@ -29,6 +29,11 @@ p {
   padding-right: 20px;
 }
 
+button:hover, #icons a:hover, a:hover  {
+  transform: translate(1%, 1%) scale(1.10);
+  color: #76cb8f;
+}
+
 ul {
   padding-left: 0;
 }
@@ -43,11 +48,7 @@ li {
 }
 
 a {
-  color: beige;
-}
-
-a:hover {
-  color: #337ab7;
+  color: white;
 }
 
 @media only screen and (min-width: 768px) {

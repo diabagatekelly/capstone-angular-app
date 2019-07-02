@@ -4,15 +4,40 @@ h2 {
   margin-top: 50px;
 }
 
+.container {
+  border: 5px solid white;
+  background-color: white;
+  padding-bottom: 70px;
+  margin-bottom: 100px;
+}
+
+[data-aos="slide-down"] {
+  transform: translate3d(0,-20%,0);
+  /* opacity: 0;
+  transition-property: transform, opacity; */
+}
+
 .button-row-style {
   margin: 50px auto;
   justify-content: center;
 }
 
-#myCarousel, .carousel-inner, .card-img-top, .btn {
+.btn {
+  margin-right: 0.5em;
+  border: 1px solid #76cb8f;
+}
+
+.btn-default.active {
+  background-color: #dbfff2;
+}
+
+.card-img-top, .btn {
   border-radius: 1.5em;
-	padding-top: .3em;
-	box-shadow: 5px 5px 5px #666666;
+	box-shadow: 3px 3px 3px #666666;
+}
+
+.card {
+  border: none;
 }
 
 .img-fluid {
@@ -26,8 +51,16 @@ h2 {
   border-radius: 20%;
 }
 
+button:hover, .carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
+  transform: translate(1%, 1%) scale(1.10);
+}
+
 .carousel-indicators {
   bottom: -50px;
+}
+
+.carousel-indicators li {
+  border: 1px solid black;
 }
 
 .ol {
@@ -78,6 +111,11 @@ padding-bottom: 25px;
 
   .button-row-style {
     margin: 10px auto;
+  }
+
+  .container {
+    margin-bottom: 25px;
+    padding: 0 20px; 
   }
 }
 

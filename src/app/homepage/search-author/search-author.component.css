@@ -1,5 +1,10 @@
 button {
     transition: all 200ms ease 100ms;
+}
+
+  .btn-primary {
+    background-color: #76cb8f;
+    color: black;
   }
   
   button:hover {

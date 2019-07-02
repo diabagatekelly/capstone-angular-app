@@ -1,130 +1,49 @@
-<div class="row">
-  <div class="col-xs-10 col-xs-offset-1 text-center">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <h2>Welcome to Book Chat!</h2>
-        <p id="imageintro">
-          We are an online resource for all book lovers. If you want to find out
-          or join Goodread discussions about your favorite books and authors, or
-          are looking for something new to fall in love with, you have come to
-          the right place!
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <div
-          id="myCarousel"
-          class="carousel"
-          data-ride="carousel"
-          aria-labelledby="carousel"
-        >
-          <div
-            class="carousel-inner row w-100 mx-auto"
-            #cara="Carousel"
-            [animationDuration]="300"
-          >
-            <div class="carousel-item active">
-              <div class="card">
-                <a href="#imageintro"
-                  ><img
-                    class="card-img-top img-fluid"
-                    src="https://i.ibb.co/C94b79D/hemingway-Quote.jpg"
-                    alt="Earnest Hemingway quote"
-                /></a>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card">
-                <a href="#image1"
-                  ><img
-                    src="https://i.ibb.co/9wLbPpm/New-York-Times-Logo.jpg"
-                    class="card-img-top img-fluid"
-                    alt="NY Times Logo"
-                /></a>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card">
-                <a href="#image2"
-                  ><img
-                    class="card-img-top img-fluid"
-                    src="https://cdn.pixabay.com/photo/2019/02/06/08/46/author-3978658_1280.jpg"
-                    alt="author typing"
-                /></a>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card">
-                <a href="#image3"
-                  ><img
-                    class="card-img-top img-fluid"
-                    src="https://get.pxhere.com/photo/writing-book-novel-vintage-old-love-heart-romance-brand-text-words-nostalgic-organ-document-valentines-959266.jpg"
-                    alt="opened book with heart on it"
-                /></a>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card">
-                <a href="#image4"
-                  ><img
-                    class="card-img-top img-fluid"
-                    src="https://www.maxpixel.net/static/photo/1x/Literature-Books-Bookshelf-Shelf-Library-Bookcase-2007660.jpg"
-                    alt="bookshelf full of books"
-                /></a>
-              </div>
-            </div>
-          </div>
-          <nav aria-label="carousel">
-            <ul class="pager">
-              <li>
-                <a role="button" (click)="cara.prev(1)">
-                  <span>Previous</span>
-                </a>
-              </li>
-              <li>
-                <a role="button" (click)="cara.next(1)">
-                  <span>Next</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+<div class="container">
+  <div class="row" data-aos-once="false" data-aos="slide-up">
+    <div class="col-xs-10 col-xs-offset-1 text-center">
+      <div class="row">
+        <div class="col">
+          <h2>Welcome to Book Chat!</h2>
+          <p>We are an online resource for all book lovers. If you want to find out more about your favorite books and authors, or
+            are looking for something new to fall in love with, you have come to the right place!
+          </p>
         </div>
       </div>
-      <div class="col-xs-12 col-md-6">
-        <div class="row height">
-          <div class="col-6" id="image1">
-            <h4>What's hot?</h4>
-            <p>
-              Find out what everyone is talking about in literature from the NY
-              Times' weekly bestseller lists.
-            </p>
-          </div>
-          <div class="col-6" id="image2">
-            <h4>Who's this?</h4>
-            <p>
-              Learn everything there is to know about any author. Just type
-              their name in the search box.
-            </p>
+      <div class="row grid">
+        <div class="card grid-item1" style="max-width: 250px">
+          <img class="card-img-top" src="https://i.ibb.co/9wLbPpm/New-York-Times-Logo.jpg" alt="NY Times logo">
+          <div class="card-body">
+            <h5 class="card-title">Current Bestsellers</h5>
+            <p class="card-text">Find out what everyone is talking about in literature from the NY Times' weekly bestseller lists.</p>
           </div>
         </div>
-        <div class="row height">
-          <div class="col-6" id="image3">
-            <h4>That book!</h4>
-            <p>
-              Search books by their title or author. Find out about their
-              series, author, reviews, and more.
-            </p>
+        <div class="card grid-item2" style="max-width: 250px;">
+          <img class="card-img-top" src="https://cdn.pixabay.com/photo/2019/02/06/08/46/author-3978658_1280.jpg" alt="author typing">
+          <div class="card-body">
+            <h5 class="card-title">Author Bios</h5>
+            <p class="card-text">Learn everything there is to know about any author. Just type their name in the search box.</p>
           </div>
-          <div class="col-6" id="image4">
-            <h4>Add to faves</h4>
-            <p>
-              Add the books that peak your interest to your virtual bookshelf to
-              buy later or find out more about.
-            </p>
+        </div>
+        <div class="card grid-item3" style="max-width: 250px;">
+          <img class="card-img-top" src=" https://get.pxhere.com/photo/writing-book-novel-vintage-old-love-heart-romance-brand-text-words-nostalgic-organ-document-valentines-959266.jpg" alt="opened book with heart on it">
+          <div class="card-body">
+            <h5 class="card-title">Book Info</h5>
+            <p class="card-text">Search books by their title or author. Find out about their series, author, reviews, and more.</p>
+          </div>
+        </div>
+        <div class="card grid-item4" style="max-width: 250px">
+          <img class="card-img-top" src="https://www.maxpixel.net/static/photo/1x/Literature-Books-Bookshelf-Shelf-Library-Bookcase-2007660.jpg" alt="bookshelf full of books">
+          <div class="card-body">
+            <h5 class="card-title">Add to Faves</h5>
+            <p class="card-text">Add the books that peak your interest to your virtual bookshelf to preview or buy later.</p>
           </div>
         </div>
       </div>
-    </div>
+        </div>
   </div>
+<div data-aos="slide-up-inv" data-aos-delay="1500" class="row">
+  <div class="col text-center">
+      <a href="#" class="btn btn-primary">Learn More</a>
+  </div>
+</div>  
 </div>

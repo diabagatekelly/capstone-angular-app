@@ -1,16 +1,12 @@
 import {
   Component,
   OnInit,
-  Input,
   HostListener,
-  OnChanges,
-  SimpleChange,
-  SimpleChanges,
-  AfterContentChecked
 } from '@angular/core';
 import { NYTBooksService } from '../../../shared/nyt-featured-books.service';
 import { ActivatedRoute } from '@angular/router';
 import { FilterAuthorNameService } from '../../../shared/filterauthorname.service';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-featured-books',
@@ -179,6 +175,11 @@ export class FeaturedBooksComponent implements OnInit {
       this.childrenBooksFinal = this.childrenBooks4;
       this.youngAdultBooksFinal = this.youngAdultBooks4;
     }
+
+    AOS.init({
+      duration: 2000,
+      easing: 'ease-out'
+    });
   }
 
   @HostListener('window:resize', ['$event'])

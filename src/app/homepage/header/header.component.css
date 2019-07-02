@@ -1,5 +1,6 @@
 .jumbotron {
-  background: url('https://i.ibb.co/4ZymY4T/header-img.jpg') no-repeat;
+  /* background: url('https://i.ibb.co/4ZymY4T/header-img.jpg') no-repeat; */
+  background: url('../../../assets/images/pastel-2101544.png') no-repeat;
   background-size: cover;
   height: 100vh;
   margin-bottom: 0;
@@ -16,69 +17,55 @@
   font-family: 'Marck Script', cursive, sans-serif;
 }
 
-@keyframes slideInFromTop {
-  0% {
-    transform: translateY(-100vh);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
 .lead {
   font-style: italic; 
-  animation: 5s ease-in 0s 1 slideInFromTop;
-}
-
-@keyframes fadeInLine {
-  0% {
-    opacity: 0;
-  }
-
-  /* Finish changes by here */
-  90% {
-    opacity: 0;
-  }
-
-  /* Between 20% and 100%, nothing changes */
-  100% {
-   opacity: 1;
-  }
+  /* animation: 5s ease-in 0s 1 slideInFromTop; */
 }
 
 .line-style {
     border-top: 5px double #333;
-    animation: fadeInLine 8s ease-in;
-}
-
-
-@keyframes moveSearchBox {
-  0% {
-    transform: translate(-200vh, 0);
-  }
-
-  /* Finish changes by here */
-  50% {
-    transform: translate(-200vh, 0);
-  }
-
-  /* Between 20% and 100%, nothing changes */
-  100% {
-    transform: translate(0, 0);
-  }
+    /* animation: fadeInLine 8s ease-in; */
 }
 
 .searchbox-style {
-  background-color: lightgray;
+  background-color: white;
   padding: 2em 1em; 
   border-radius: 1.5%;
-  animation: moveSearchBox 6s ease-in;
+  border: 1px solid #76cb8f;
+  /* animation: moveSearchBox 6s ease-in; */
 }
 
-.active {
+[data-aos="fade"] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+  [data-aos="fade"].aos-animate {
+    opacity: 1;
+  }
+
+  [data-aos="slide-right"] {
+    opacity: 0;
+    transition-property: transform, opacity;
+  }
+  
+    [data-aos="slide-right"].aos-animate {
+      opacity: 1;
+    }
+
+.nav-tabs .nav-link.active {
   color: #495057;
-  background-color: #fff;
+  background-color: #dbfff2;
   border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.card {
+  border: 1px solid #76cb8f;
+}
+
+.card-header {
+  border-bottom: 1px solid #76cb8f;
+  background-color: white;
 }
 
 .card-body-style {
@@ -93,12 +80,26 @@
   .searchbox-style {
     width: 100%;
   }
+
+  .jumbotron {
+    background: url('../../../assets/images/pastel-2101544.png') no-repeat;
+    background-size: cover;
+    height: 75vh;
+    margin-bottom: 0;
+  }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .searchbox-style {
     margin: 0 auto;
     width: 75%;
+  }
+
+  .jumbotron {
+    background: url('../../../assets/images/pastel-2101544.png') no-repeat;
+    background-size: cover;
+    height: 75vh;
+    margin-bottom: 0;
   }
 }
 

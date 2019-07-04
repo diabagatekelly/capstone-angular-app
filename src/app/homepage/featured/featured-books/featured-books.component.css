@@ -40,15 +40,23 @@ h2 {
   border: none;
 }
 
+.card-title {
+font-weight: 900;
+}
+
 .img-fluid {
   max-width: 100%;
-  height: 65vh;
+  height: 28vw;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: black;
   border-radius: 20%;
+}
+
+a.carousel-control-next, a.carousel-control-prev {
+  width: 20px;
 }
 
 button:hover, .carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
@@ -67,7 +75,24 @@ button:hover, .carousel-control-prev-icon:hover, .carousel-control-next-icon:hov
 padding-bottom: 25px;
 }
 
+p > a {
+  color: inherit;
+  font-weight: 700;
+}
+
 @media only screen and (max-width: 600px) {
+
+  .col-carousel {
+    width: 100%;
+  }
+
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .small-btn {
     display: grid;
     margin: 0 auto;
@@ -99,12 +124,6 @@ padding-bottom: 25px;
     border: 1px solid gray;
   }
 
-  .col-carousel {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width:768px) {
   h2 {
     margin-top: 15px;
   }
@@ -114,8 +133,27 @@ padding-bottom: 25px;
   }
 
   .container {
+    margin-top: 50px;
     margin-bottom: 25px;
-    padding: 0 20px; 
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 900px) {
+  .card-title {
+    padding-top: 100px;
+  }
+
+  .card-body {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .card-body:hover {
+    opacity: 0.85;
+    z-index: 5;
+    height: 58vw;
+    background-color: #76cb8f;
   }
 }
 
@@ -123,25 +161,61 @@ padding-bottom: 25px;
   .col-carousel {
     width: 50%;
   }
+
   .img-fluid {
-    height: 50vh;
-  }
+  max-width: 100%;
+  height: 58vw;
+}
 }
 
 @media only screen and (min-width: 900px) and (max-width: 1100px) {
   .col-carousel {
     width: 33%;
   }
+
   .img-fluid {
-    height: 50vh;
-  }
+  max-width: 100%;
+  height: 34vw;
+}
+
+.card-title {
+  padding-top: 100px;
+}
+
+.card-body {
+  opacity: 0;
+  position: absolute;
+  height: 34vw;
+}
+
+.card-body:hover {
+  opacity: 0.85;
+  z-index: 5;
+  height: 34vw;
+  background-color: #76cb8f;
+}
 }
 
 @media only screen and (min-width: 1100px) {
   .col-carousel {
     width: 25%;
   }
-  .img-fluid {
-    height: 60vh;
+
+  .card-title {
+    padding-top: 100px;
+  }
+
+  .card-body {
+    opacity: 0;
+    position: absolute;
+    height: 28vw;
+  }
+
+  .card-body:hover {
+    opacity: 0.9;
+    z-index: 5;
+    height: 28vw;
+    width: 90.5%;
+    background-color: #76cb8f;
   }
 }

@@ -38,7 +38,7 @@
         <!-- Carousel -->
         <div id="myCarousel" class="carousel-fluid" data-ride="carousel" test>
           <!-- Indicators -->
-          <ol class="carousel-indicators" [ngSwitch]="featuredBook">
+          <!-- <ol class="carousel-indicators" [ngSwitch]="featuredBook">
             <div *ngSwitchCase="'fiction'">
               <li
                 data-target="#myCarousel"
@@ -79,7 +79,7 @@
                 ngClass="i == 0 ? 'active' : ''"
               ></li>
             </div>
-          </ol>
+          </ol> -->
           <!-- Carousel Items -->
           <div
             class="carousel-inner row w-100 mx-auto"
@@ -106,15 +106,11 @@
                         src="{{ link.book_image }}"
                         alt="Card image cap"
                     /></a>
-                    <div class="card-body">
-                      <h4 class="card-title">Card 1</h4>
+                    <div class="card-body text-center">
+                      <h5 class="card-title">{{link.title}}</h5>
+                      <h6 class="card-text">{{link.author}}</h6>
                       <p class="card-text">
-                        This is a longer card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                        {{link.description}}
                       </p>
                     </div>
                   </div>
@@ -140,16 +136,16 @@
                         src="{{ link.book_image }}"
                         alt="Card image cap"
                     /></a>
-                    <div class="card-body">
-                      <h4 class="card-title">Card 1</h4>
+                    <div class="card-body text-center">
+                      <h5 class="card-title">{{link.title}}</h5>
+                      <h6 class="card-text">{{link.author}}</h6>
                       <p class="card-text">
-                        This is a longer card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
+                        {{link.description}}
                       </p>
-                      <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </p>
+                      <p><a
+                        [routerLink]="['/home/books']"
+                        [queryParams]="{ isbn: link.primary_isbn13 }"
+                        >Read more</a></p>
                     </div>
                   </div>
                 </div>
@@ -175,16 +171,16 @@
                         src="{{ link.book_image }}"
                         alt="Card image cap"
                     /></a>
-                    <div class="card-body">
-                      <h4 class="card-title">Card 1</h4>
+                    <div class="card-body text-center">
+                      <h5 class="card-title">{{link.title}}</h5>
+                      <h6 class="card-text">{{link.author}}</h6>
                       <p class="card-text">
-                        This is a longer card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
+                        {{link.description}}
                       </p>
-                      <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </p>
+                      <p><a
+                        [routerLink]="['/home/books']"
+                        [queryParams]="{ isbn: link.primary_isbn13 }"
+                        >Read more</a></p>
                     </div>
                   </div>
                 </div>
@@ -209,16 +205,16 @@
                         src="{{ link.book_image }}"
                         alt="Card image cap"
                     /></a>
-                    <div class="card-body">
-                      <h4 class="card-title">Card 1</h4>
+                    <div class="card-body text-center">
+                      <h5 class="card-title">{{link.title}}</h5>
+                      <h6 class="card-text">{{link.author}}</h6>
                       <p class="card-text">
-                        This is a longer card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
+                        {{link.description}}
                       </p>
-                      <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </p>
+                      <p><a
+                        [routerLink]="['/home/books']"
+                        [queryParams]="{ isbn: link.primary_isbn13 }"
+                        >Read more</a></p>
                     </div>
                   </div>
                 </div>
@@ -243,16 +239,16 @@
                         [src]="link.book_image"
                         alt="Card image cap"
                     /></a>
-                    <div class="card-body">
-                      <h4 class="card-title">Card 1</h4>
+                    <div class="card-body text-center">
+                      <h5 class="card-title">{{link.title}}</h5>
+                      <h6 class="card-text">by {{link.author}}</h6>
                       <p class="card-text">
-                        This is a longer card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
+                        {{link.description}}
                       </p>
-                      <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </p>
+                      <p><a
+                        [routerLink]="['/home/books']"
+                        [queryParams]="{ isbn: link.primary_isbn13 }"
+                        >Read more</a></p>
                     </div>
                   </div>
                 </div>

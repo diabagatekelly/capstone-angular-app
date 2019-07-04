@@ -175,6 +175,7 @@ export class FeaturedBooksComponent implements OnInit {
       this.childrenBooksFinal = this.childrenBooks4;
       this.youngAdultBooksFinal = this.youngAdultBooks4;
     }
+    console.log(this.fictionBooksFinal);
 
     AOS.init({
       duration: 2000,

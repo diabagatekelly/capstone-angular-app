@@ -22,7 +22,7 @@ h5 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 5px;
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 1fr);
 }
 
 .grid-item1 {
@@ -30,7 +30,7 @@ h5 {
 }
 
 .grid-item2 {
-  grid-area: 3 / 2 / 8 / 2;
+  grid-area: 2 / 2 / 7 / 2;
 }
 
 .grid-item3 {
@@ -38,7 +38,7 @@ h5 {
 }
 
 .grid-item4 {
-  grid-area: 3/4/8/4;
+  grid-area: 2/4/7/4;
 }
 
 p#imageintro {
@@ -80,13 +80,17 @@ p#imageintro {
   color: black;
 }
 
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #a8ffbf;
+  color: black;
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: none;
+}
+
 @media only screen and (max-width: 768px) {
   h2 {
     margin: 15px auto;
-  }
-
-  p#imageintro {
-    margin: 10px auto;
   }
 
   .grid {
@@ -105,6 +109,7 @@ p#imageintro {
 
 @media only screen and (max-width: 768px) {
   .container {
+    margin-top: 50px;
     margin-bottom: 25px;
   }
 }

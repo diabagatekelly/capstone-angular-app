@@ -11,3 +11,11 @@ button {
   button:hover {
     transform: translate(1%, 1%) scale(1.05);
   }
+
+  .btn-primary:not(:disabled):not(.disabled):active {
+    background-color: #a8ffbf;
+    color: black;
+    border: 1px solid #ccc;
+    outline: none;
+    box-shadow: none;
+  }

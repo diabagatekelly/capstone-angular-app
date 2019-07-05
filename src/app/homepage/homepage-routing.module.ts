@@ -6,11 +6,12 @@ import { SearchAuthorResultsComponent } from './search-author/search-author-resu
 import { AboutComponent } from './about/about.component';
 import { AuthorPageComponent } from '../homepage/info/author-page/author-page.component';
 import { BookPageComponent } from '../homepage/info/book-page/book-page.component';
+import { AboutDetailsComponent } from './about/about-details/about-details.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomepageComponent },
-  {path: 'about', component: AboutComponent},
+  { path: 'about', component: AboutDetailsComponent},
   { path: 'search-author-results', component: SearchAuthorResultsComponent },
   { path: 'search-book-results', component: SearchBookResultsComponent },
   { path: 'search-author-results/:authors', component: AuthorPageComponent },
@@ -28,6 +29,7 @@ export const RoutingComponents = [
   SearchAuthorResultsComponent,
   HomepageComponent,
   AboutComponent,
+  AboutDetailsComponent,
   AuthorPageComponent,
   BookPageComponent
 ];

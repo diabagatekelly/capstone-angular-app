@@ -10,6 +10,14 @@
   color: black;
 }
 
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #a8ffbf;
+  color: black;
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: none;
+}
+
 h2 {
   text-transform: uppercase;
   text-align: center;
@@ -30,9 +38,14 @@ h2 {
   margin: 50px auto;
 }
 
+input {
+  margin-bottom: 20px;
+}
+
 button:hover {
   transform: translate(1%, 1%) scale(1.10);
 }
+
 
 @media only screen and (max-width: 768px) {
   h2 {

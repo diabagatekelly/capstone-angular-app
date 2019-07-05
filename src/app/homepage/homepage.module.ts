@@ -18,6 +18,7 @@ import { BookPageComponent } from './info/book-page/book-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselDirective } from '../shared/carousel.directive';
 import { NewsletterComponent } from './newsletter/newsletter.component';
+import { AboutDetailsComponent } from './about/about-details/about-details.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
     BookPageComponent,
     CarouselDirective,
     NewsletterComponent,
+    AboutDetailsComponent,
   ],
   imports: [
     CommonModule,

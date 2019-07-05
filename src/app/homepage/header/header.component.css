@@ -53,9 +53,13 @@
       opacity: 1;
     }
 
+.nav-tabs .nav-link:hover {
+  background-color: #dbfff2;
+}
+
 .nav-tabs .nav-link.active {
   color: #495057;
-  background-color: #dbfff2;
+  background-color: #76cb8f;
   border-color: #dee2e6 #dee2e6 #fff;
 }
 

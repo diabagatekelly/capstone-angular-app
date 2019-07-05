@@ -27,13 +27,20 @@ h2 {
   border: 1px solid #76cb8f;
 }
 
-.btn-default.active {
-  background-color: #dbfff2;
-}
 
 .card-img-top, .btn {
   border-radius: 1.5em;
-	box-shadow: 3px 3px 3px #666666;
+	box-shadow: 3px 3px 3px #76cb8f;
+}
+
+.btn:hover {
+  background-color: #dbfff2;
+}
+
+.btn:focus {
+  background-color: #76cb8f;
+  border: 1px #333 solid;
+  outline: none;
 }
 
 .card {
@@ -106,22 +113,18 @@ p > a {
 
   .one {
     grid-area: one;
-    border: 1px solid gray;
   }
 
   .two {
     grid-area: two;
-    border: 1px solid gray;
   }
 
   .three {
     grid-area: three;
-    border: 1px solid gray;
   }
 
   .four {
     grid-area: four;
-    border: 1px solid gray;
   }
 
   h2 {
@@ -133,7 +136,6 @@ p > a {
   }
 
   .container {
-    margin-top: 50px;
     margin-bottom: 25px;
     padding: 0 20px;
   }

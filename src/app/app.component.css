@@ -1,4 +1,4 @@
-button, .navbar-brand,.nav-item {
+button, .btn, .navbar-brand,.nav-item {
   transition: all 200ms ease 100ms;
 }
 
@@ -6,11 +6,15 @@ button, .navbar-brand,.nav-item {
   color: #76cb8f;
 } 
 
-
-button:hover, .navbar-brand:hover, .nav-item:hover {
+.navbar-brand:hover, button:hover, .btn:hover, .nav-item:hover {
   transform: translate(1%, 1%) scale(1.10);
   color: #76cb8f;
   font-weight: bold;
+}
+
+.btn:focus {
+  box-shadow: none;
+  outline: none;
 }
 
 .navbar-brand {

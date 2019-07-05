@@ -29,9 +29,16 @@ p {
   padding-right: 20px;
 }
 
-button:hover, #icons a:hover, a:hover  {
-  transform: translate(1%, 1%) scale(1.10);
+#icons a:hover {
+  transform: translate(1%, 1%) scale(1.7);
   color: #76cb8f;
+}
+
+#nav p:hover, #nav a:hover, #copy a:hover {
+  transform: scale(1.1);
+  color: #76cb8f;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 ul {

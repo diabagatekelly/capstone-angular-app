@@ -44,6 +44,7 @@ export class FeaturedBooksComponent implements OnInit {
   youngAdultBooksFinal = [];
 
   featuredBook = '';
+  backgroundColor = false;
 
   public innerWidth: any;
 
@@ -211,6 +212,7 @@ export class FeaturedBooksComponent implements OnInit {
 
   onFiction() {
     this.featuredBook = 'fiction';
+    this.backgroundColor = false;
   }
 
   onNonfiction() {

@@ -17,12 +17,14 @@ import { FilterAuthorNameService } from './shared/filterauthorname.service';
 import { GetAuthorNameService } from './shared/getauthorname.service';
 import { AuthorInfoService } from './shared/author-info.service';
 import { FooterComponent } from './shared/footer/footer.component';
+import { NavComponent } from './shared/nav/nav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
+    NavComponent,
     ],
   imports: [
     BrowserModule,

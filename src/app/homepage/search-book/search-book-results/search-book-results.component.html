@@ -44,7 +44,9 @@
             <div class="img">
                 <img class="img-fluid" src="{{ book.best_book[0].image_url }}" />
             </div>
-        <p>{{ book.best_book[0].title }}</p>
+              <p>{{ book.best_book[0].title }}</p>
+          </a>
+          <a [routerLink]="['/search-author-results/authors']" [queryParams]="{ authorID: book.best_book[0].author[0].id[0]._}">
         <p>{{ book.best_book[0].author[0].name }}</p>
       </a>
     </div>

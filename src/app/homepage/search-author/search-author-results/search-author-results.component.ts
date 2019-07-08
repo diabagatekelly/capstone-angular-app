@@ -4,6 +4,7 @@ import { GetAuthorNameService } from '../../../shared/getauthorname.service';
 import { FilterAuthorNameService } from '../../../shared/filterauthorname.service';
 import { switchMap } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-search-author-results',
   templateUrl: './search-author-results.component.html',
@@ -13,6 +14,8 @@ import { switchMap } from 'rxjs/operators';
 export class SearchAuthorResultsComponent implements OnInit {
   authorSearch = '';
   authorDetail = [];
+
+  public show: boolean[] = [];
 
   constructor(private route: ActivatedRoute, private filterauthor: FilterAuthorNameService, private getauthorname: GetAuthorNameService) {}
 
@@ -30,7 +33,6 @@ export class SearchAuthorResultsComponent implements OnInit {
         console.log(this.authorDetail);
       });
   }
-
 
   authorSearchOn() {
     this.authorSearch = 'author-clicked';

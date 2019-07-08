@@ -1,19 +1,42 @@
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-    padding-bottom: 50px; 
-}
-
-.books {
+.box {
     border: 1px solid green;
     text-align: center;
-    padding-top: 10px;
+    margin-bottom: 25px;
+    padding: 25px 0;
+    font-weight: 700;
+    font-size: 16px;
 }
 
-.img {
-    margin-bottom: 10px;
+
+.title {
+  width: 25%;
+  padding-top: 2%;
+  transition: all 1s linear;
+}
+
+.title-active {
+  width: 50%;
+}
+
+.author {
+  margin-left: 25%;
+  transition: all 0.2s ease-out;
+}
+
+.author-active {
+  margin-left: 0
+}
+
+button {
+  margin: 10px;
+}
+
+.buttons {
+  margin-top: 25%;
+}
+
+.img-fluid {
+  max-height: 200px;
 }
 
 .col {
@@ -26,7 +49,7 @@
     padding: 2em 1em; 
     border-radius: 1.5%;
     border: 1px solid #76cb8f;
-    /* animation: moveSearchBox 6s ease-in; */
+    animation: moveSearchBox 6s ease-in;
   }
 
   .nav-tabs .nav-link:hover {
@@ -56,35 +79,6 @@
     width: 100%;
   }
 
-@media only screen and (max-width: 425px) {
-    .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 5px;
-    grid-auto-rows: minmax(100px, auto);
-    }
-}
-
-@media only screen and (min-width: 425px) and (max-width: 768px) {
-    .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 5px;
-    grid-auto-rows: minmax(100px, auto);
-    }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5px;
-    grid-auto-rows: minmax(100px, auto);
-    }
-}
-
-
-
   @media only screen and (max-width: 575px) {
     .searchbox-style {
       width: 100%;
@@ -96,4 +90,28 @@
       margin: 0 auto;
       width: 75%;
     }
+  }
+
+  @media only screen and (max-width: 767px) {   
+   .box {
+      border: 1px solid green;
+      text-align: center;
+      margin-bottom: 25px;
+      padding: 25px 0 0 0;
+     }
+
+     .author, .author-active {
+      transition: none;
+      margin-left: auto;
+     }
+
+     .buttons {
+      margin: 5%;
+    }
+
+    .title, .title-active {
+      padding-top: 0;
+      width: 100%;
+      transition: none;
+      }
   }

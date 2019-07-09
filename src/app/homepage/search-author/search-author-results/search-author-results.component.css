@@ -1,5 +1,5 @@
 .box {
-    border: 1px solid green;
+    border: 1px solid #76cb8f;
     text-align: center;
     margin-bottom: 25px;
     padding: 25px 0;
@@ -7,10 +7,55 @@
     font-size: 16px;
 }
 
+.name {
+  font-size: 18px;
+}
+
+.box p {
+  transition: all 200ms ease 100ms;
+}
+
+.box p:hover, .box a:hover {
+  transform: translate(1%, 1%) scale(1.10);
+  color: #76cb8f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+hr {
+  border: 2px double #76cb8f;
+}
+
+button {
+  transition: all 200ms ease 100ms;
+}
+
+.btn-primary {
+  background-color: #76cb8f;
+  border: 1px solid #ccc;
+  color: black;
+}
+
+button:hover {
+  transform: translate(1%, 1%) scale(1.05);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #a8ffbf;
+  color: black;
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+}
 
 .title {
   width: 25%;
-  padding-top: 2%;
   transition: all 1s linear;
 }
 
@@ -94,7 +139,7 @@ button {
 
   @media only screen and (max-width: 767px) {   
    .box {
-      border: 1px solid green;
+      border: 1px solid #76cb8f;
       text-align: center;
       margin-bottom: 25px;
       padding: 25px 0 0 0;

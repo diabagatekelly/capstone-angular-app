@@ -7,7 +7,7 @@
 }
 
 .books {
-    border: 1px solid green;
+    border: 1px solid #76cb8f;
     text-align: center;
     padding-top: 10px;
 }
@@ -57,6 +57,20 @@
     width: 100%;
   }
 
+  hr {
+    border: 2px double #76cb8f;
+  }
+
+  .grid a {
+    transition: all 200ms ease 100ms;
+  }
+  
+  .grid a:hover {
+    transform: translate(1%, 1%) scale(1.10);
+    color: #76cb8f;
+    font-weight: bold;
+  }
+
 @media only screen and (max-width: 425px) {
     .grid {
     display: grid;
@@ -83,8 +97,6 @@
     grid-auto-rows: minmax(100px, auto);
     }
 }
-
-
 
   @media only screen and (max-width: 575px) {
     .searchbox-style {

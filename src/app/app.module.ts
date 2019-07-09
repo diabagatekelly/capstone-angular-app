@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
@@ -18,6 +18,8 @@ import { GetAuthorNameService } from './shared/getauthorname.service';
 import { AuthorInfoService } from './shared/author-info.service';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavComponent } from './shared/nav/nav.component';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { LoaderInterceptorService } from './shared/loader-interceptor.service';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { NavComponent } from './shared/nav/nav.component';
     AppComponent,
     FooterComponent,
     NavComponent,
+    LoaderComponent,
     ],
   imports: [
     BrowserModule,
@@ -37,7 +40,12 @@ import { NavComponent } from './shared/nav/nav.component';
     BrowserAnimationsModule,
   ],
   providers: [GoodreadsBooksService, GetBookTitleService, FilterAuthorNameService, GetAuthorNameService,
-    AuthorInfoService],
+    AuthorInfoService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

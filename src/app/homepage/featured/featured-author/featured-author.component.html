@@ -1,0 +1,81 @@
+<div class="row text-center">
+  <h2>FEATURED AUTHORS</h2>
+</div>
+<div class="row" *ngFor="let author of authors">
+  <div class="col-xs-6 text-center">
+    <h3>{{ author.name }}</h3>
+    <div>
+      <img
+        src="{{ author.image_url }}"
+        class="img-responsive"
+        style="margin: 1em auto"
+      />
+    </div>
+    <div>{{ author.about }}</div>
+  </div>
+  <div class="col-xs-6">
+    <div class="well">
+      <div id="myCarousel" class="carousel slide">
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="row">
+              <div
+                class="col-xs-6 text-center"
+                *ngFor="let book of author.books[0].book | slice: 0:2"
+              >
+                <div>
+                  <a href="#x"
+                    ><img
+                      src="{{ book.image_url }}"
+                      alt="twilight cover"
+                      class="img-responsive"
+                      style="max-height: 250px; margin: 1em auto"
+                  /></a>
+                </div>
+                <div style="font-weight: 700">{{ book.title }}</div>
+                <div style="font-weight: 700; margin: 1em 0">
+                  {{ book.average_rating }}
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div
+                class="col-xs-6 text-center"
+                *ngFor="let book of author.books[0].book | slice: 2:4"
+              >
+                <div>
+                  <a href="#x"
+                    ><img
+                      src="{{ book.image_url }}"
+                      alt="twilight cover"
+                      class="img-responsive"
+                      style="max-height: 250px; margin: 1em auto"
+                  /></a>
+                </div>
+                <div style="font-weight: 700">{{ book.title }}</div>
+                <div style="font-weight: 700; margin: 1em 0">
+                  {{ book.average_rating }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/row-->
+        </div>
+
+        
+      </div>
+      <!--/carousel-inner-->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"
+        >‹</a
+      >
+
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"
+        >›</a
+      >
+    </div>
+    <!--/myCarousel-->
+  </div>
+  <!--/well-->
+</div>

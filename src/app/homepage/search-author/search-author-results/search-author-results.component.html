@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row">
+        <div class="searchbox-style col-sm-8 col-sm-offset-2">
+       <div class="card text-left"> 
+         <div class="card-header">
+           <ul class="nav nav-tabs card-header-tabs">
+             <li class="nav-item" (click)="bookSearchOn()">
+               <a [ngClass]="{'active': authorSearch === '' || authorSearch === 'book-clicked'}" class="nav-link">Books</a>
+             </li>
+             <li class="nav-item" (click)="authorSearchOn()">
+               <a [ngClass]="{'active': authorSearch === 'author-clicked'}" class="nav-link">Authors</a>
+             </li>
+           </ul>
+         </div>
+         <div class="card-body">
+           <div class="form-block card-body-style">
+             <div class="row" [ngSwitch]="authorSearch">
+               <div class="input-width" *ngSwitchCase="'book-clicked'">
+                 <app-search-book></app-search-book>
+               </div>
+               <div class="input-width" *ngSwitchCase="'author-clicked'">
+                 <app-search-author></app-search-author>
+               </div>
+               <div class="input-width" *ngSwitchDefault><app-search-book></app-search-book></div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+    </div>
+    
+    <hr/>
+
+    <div class="row box" *ngFor="let author of authorDetail[0]; let i = index">
+      <div class="col-xs-12 col-md-6 author" [ngClass]="{'author-active' : show[i]}">
+        <div class="row">
+          <div class="col-xs-12  col-md-6">
+              <a [routerLink]="['/search-author-results/authors']" [queryParams]="{ authorID: author.id[0] }">
+                <p class="name">{{ author.name }}</p>
+                <img class="img-fluid" src="{{ author.large_image_url }}" />
+              </a>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <div class="buttons">
+                <a [routerLink]="['/search-author-results/authors']" [queryParams]="{ authorID: author.id[0] }">
+                  <button class="btn btn-primary author-page" type="button">
+                    Go to Author's Page
+                  </button>
+                </a>
+                    <button (click)="show[i] = !show[i]" class="btn btn-primary" type="button" data-toggle="collapse" [attr.data-target]="'#collapseExample' + i" aria-expanded="false" aria-controls="collapseExample">
+                        View Author's Works
+                      </button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 title" [ngClass]="{'title-active' : show[i]}">
+          <div *ngFor="let book of author.books[0].book">
+              <div [attr.id]="'collapseExample' + i" class="collapse" [class.show]="show[i]">
+                  <a [routerLink]="['/search-book-results/books']" [queryParams]="{
+                    authorID: book.authors[0].author[0].id,
+                    bookID: book.id[0]._}">
+                  <p>{{ book.title}}</p>
+                  </a>
+              </div>
+          </div>
+    </div>
+      </div>
+    </div>
+
+    
+
+     

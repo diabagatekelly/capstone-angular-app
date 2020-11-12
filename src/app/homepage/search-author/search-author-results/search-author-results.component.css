@@ -1,0 +1,162 @@
+.box {
+    border: 1px solid #76cb8f;
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 25px 0;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.name {
+  font-size: 18px;
+}
+
+.box p {
+  transition: all 200ms ease 100ms;
+}
+
+.box p:hover, .box a:hover {
+  transform: translate(1%, 1%) scale(1.10);
+  color: #76cb8f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+hr {
+  border: 2px double #76cb8f;
+}
+
+button {
+  transition: all 200ms ease 100ms;
+}
+
+.btn-primary {
+  background-color: #76cb8f;
+  border: 1px solid #ccc;
+  color: black;
+}
+
+button:hover {
+  transform: translate(1%, 1%) scale(1.05);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #a8ffbf;
+  color: black;
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.title {
+  width: 25%;
+  transition: all 1s linear;
+}
+
+.title-active {
+  width: 50%;
+}
+
+.author {
+  margin-left: 25%;
+  transition: all 0.2s ease-out;
+}
+
+.author-active {
+  margin-left: 0
+}
+
+button {
+  margin: 10px;
+}
+
+.buttons {
+  margin-top: 25%;
+}
+
+.img-fluid {
+  max-height: 200px;
+}
+
+.col {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.searchbox-style {
+    background-color: white;
+    padding: 2em 1em; 
+    border-radius: 1.5%;
+    border: 1px solid #76cb8f;
+    animation: moveSearchBox 6s ease-in;
+  }
+
+  .nav-tabs .nav-link:hover {
+    background-color: #dbfff2;
+  }
+  
+  .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #76cb8f;
+    border-color: #dee2e6 #dee2e6 #fff;
+  }
+  
+  .card {
+    border: 1px solid #76cb8f;
+  }
+  
+  .card-header {
+    border-bottom: 1px solid #76cb8f;
+    background-color: white;
+  }
+  
+  .card-body-style {
+    padding-top: 2em;
+  }
+  
+  .input-width {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 575px) {
+    .searchbox-style {
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (min-width: 576px) and (max-width: 767px) {
+    .searchbox-style {
+      margin: 0 auto;
+      width: 75%;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {   
+   .box {
+      border: 1px solid #76cb8f;
+      text-align: center;
+      margin-bottom: 25px;
+      padding: 25px 0 0 0;
+     }
+
+     .author, .author-active {
+      transition: none;
+      margin-left: auto;
+     }
+
+     .buttons {
+      margin: 5%;
+    }
+
+    .title, .title-active {
+      padding-top: 0;
+      width: 100%;
+      transition: none;
+      }
+  }

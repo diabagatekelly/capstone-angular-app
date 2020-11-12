@@ -1,0 +1,133 @@
+.container {
+  border: 5px solid white;
+  background-color: white;
+  margin-bottom: 100px;
+  padding-bottom: 50px;
+}
+
+h2 {
+  padding: 70px auto 0;
+}
+
+h2,
+h4 {
+  text-transform: uppercase;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5px;
+  grid-template-rows: repeat(7, 1fr);
+}
+
+.grid-item1 {
+  grid-area: 2 / 1 / 7 / 1;
+}
+
+.grid-item2 {
+  grid-area: 2 / 2 / 7 / 2;
+}
+
+.grid-item3 {
+  grid-area: 2/3/7/3;
+}
+
+.grid-item4 {
+  grid-area: 2/4/7/4;
+}
+
+p#imageintro {
+  margin: 50px auto;
+}
+
+[data-aos="slide-up-inv"] {
+  transform: translate3d(0, 100%, 0);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="slide-up-inv"].aos-animate {
+  opacity: 1;
+}
+
+.card-img-top {
+  border-bottom: 2px solid #76cb8f;
+}
+
+.card {
+  border: 1px solid #76cb8f;
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+  border-radius: 20%;
+}
+
+.button:hover {
+  transform: translate(1%, 1%) scale(1.10);
+}
+
+.btn-primary {
+  background-color: #76cb8f;
+  border: 1px solid #ccc;
+  color: black;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #a8ffbf;
+  color: black;
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: none;
+}
+
+@media only screen and (max-width: 768px) {
+  h2 {
+    margin: 15px auto;
+  }
+
+  .grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  } 
+
+ .grid-item1, .grid-item2, .grid-item3, .grid-item4 {
+  margin-bottom: 15px;
+  flex-grow: 1;
+  }
+  
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    margin-top: 50px;
+    margin-bottom: 25px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 870px) {
+  .carousel {
+    padding-top: 40px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .height {
+    padding: 5%;
+  }
+}
+
+@media only screen and (min-width: 1210px) {
+  .height {
+    padding: 7%;
+  }
+}

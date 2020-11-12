@@ -1,0 +1,109 @@
+.jumbotron {
+  /* background: url('https://i.ibb.co/4ZymY4T/header-img.jpg') no-repeat; */
+  background: url('https://i.ibb.co/583xKhH/pastel-2101544.png') no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin-bottom: 0;
+}
+
+.position {
+  position: relative;
+  top: 15%;
+  text-align: center;
+}
+
+.display-3 {
+  text-transform: capitalize;
+  font-family: 'Marck Script', cursive, sans-serif;
+}
+
+.lead {
+  font-style: italic; 
+  /* animation: 5s ease-in 0s 1 slideInFromTop; */
+}
+
+.line-style {
+    border-top: 5px double #333;
+    /* animation: fadeInLine 8s ease-in; */
+}
+
+.searchbox-style {
+  background-color: white;
+  padding: 2em 1em; 
+  border-radius: 1.5%;
+  border: 1px solid #76cb8f;
+  /* animation: moveSearchBox 6s ease-in; */
+}
+
+[data-aos="fade"] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+  [data-aos="fade"].aos-animate {
+    opacity: 1;
+  }
+
+  [data-aos="slide-right"] {
+    opacity: 0;
+    transition-property: transform, opacity;
+  }
+  
+    [data-aos="slide-right"].aos-animate {
+      opacity: 1;
+    }
+
+.nav-tabs .nav-link:hover {
+  background-color: #dbfff2;
+}
+
+.nav-tabs .nav-link.active {
+  color: #495057;
+  background-color: #76cb8f;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.card {
+  border: 1px solid #76cb8f;
+}
+
+.card-header {
+  border-bottom: 1px solid #76cb8f;
+  background-color: white;
+}
+
+.card-body-style {
+  padding-top: 2em;
+}
+
+.input-width {
+  width: 100%;
+}
+
+@media only screen and (max-width: 575px) {
+  .searchbox-style {
+    width: 100%;
+  }
+
+  .jumbotron {
+    background: url('https://i.ibb.co/583xKhH/pastel-2101544.png') no-repeat;
+    background-size: cover;
+    height: 85vh;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .searchbox-style {
+    margin: 0 auto;
+    width: 75%;
+  }
+
+  .jumbotron {
+    background: url('https://i.ibb.co/583xKhH/pastel-2101544.png') no-repeat;
+    background-size: cover;
+    height: 75vh;
+    margin-bottom: 0;
+  }
+}
+

@@ -1,0 +1,22 @@
+.fixed-parallax .row {
+  position: relative;
+  height: 100%;
+  padding-bottom: 50px;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.fixed-parallax .row.one {
+  padding-bottom: 0;
+}
+.fixed-parallax .row.two {
+  background-image: url('https://i.ibb.co/583xKhH/pastel-2101544.png');
+}
+.fixed-parallax .row.three {
+  background-image: url('https://i.ibb.co/583xKhH/pastel-2101544.png');
+}
+
+.fixed-parallax .row.four {
+  background-image: url('https://i.ibb.co/583xKhH/pastel-2101544.png');
+}

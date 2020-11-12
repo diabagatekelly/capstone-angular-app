@@ -1,0 +1,112 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    padding-bottom: 50px; 
+}
+
+.books {
+    border: 1px solid #76cb8f;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.img {
+    margin-bottom: 10px;
+    min-height: 148px; 
+}
+
+.col {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.searchbox-style {
+    background-color: white;
+    padding: 2em 1em; 
+    border-radius: 1.5%;
+    border: 1px solid #76cb8f;
+    /* animation: moveSearchBox 6s ease-in; */
+  }
+
+  .nav-tabs .nav-link:hover {
+    background-color: #dbfff2;
+  }
+  
+  .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #76cb8f;
+    border-color: #dee2e6 #dee2e6 #fff;
+  }
+  
+  .card {
+    border: 1px solid #76cb8f;
+  }
+  
+  .card-header {
+    border-bottom: 1px solid #76cb8f;
+    background-color: white;
+  }
+  
+  .card-body-style {
+    padding-top: 2em;
+  }
+  
+  .input-width {
+    width: 100%;
+  }
+
+  hr {
+    border: 2px double #76cb8f;
+  }
+
+  .grid a {
+    transition: all 200ms ease 100ms;
+  }
+  
+  .grid a:hover {
+    transform: translate(1%, 1%) scale(1.10);
+    color: #76cb8f;
+    font-weight: bold;
+  }
+
+@media only screen and (max-width: 425px) {
+    .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+    grid-auto-rows: minmax(100px, auto);
+    }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+    .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+    grid-auto-rows: minmax(100px, auto);
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    grid-auto-rows: minmax(100px, auto);
+    }
+}
+
+  @media only screen and (max-width: 575px) {
+    .searchbox-style {
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (min-width: 576px) and (max-width: 767px) {
+    .searchbox-style {
+      margin: 0 auto;
+      width: 75%;
+    }
+  }

@@ -1,0 +1,79 @@
+.container-fluid {
+  background-color: black;
+  color: white;
+}
+
+.col {
+  text-align: center;
+}
+
+p {
+  margin: 0 auto;
+}
+
+#nav {
+  padding-top: 50px;
+}
+
+#nav,
+#icons {
+  margin-bottom: 25px;
+}
+
+#copy {
+  padding-bottom: 50px;
+}
+
+#icons li {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+#icons a:hover {
+  transform: translate(1%, 1%) scale(1.7);
+  color: #76cb8f;
+}
+
+#nav p:hover, #nav a:hover, #copy a:hover {
+  transform: scale(1.1);
+  color: #76cb8f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+#icons a {
+  color: #337ab7;
+}
+
+a {
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  .col {
+    font-size: 16px;
+  }
+
+  button {
+    padding: 2px 12px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .col {
+    font-size: 18px;
+  }
+
+  button {
+    padding: 3px 18px;
+  }
+}

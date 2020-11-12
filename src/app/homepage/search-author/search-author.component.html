@@ -1,0 +1,14 @@
+<div class="col-xs-12">
+  <div class="input-group">
+    <input
+      type="text"
+      class="form-control"
+      id="home-search-box"
+      placeholder="Search Authors"
+      name="home-search"
+      [(ngModel)]="searchauthor"
+    />
+    <span class="input-group-btn"><a [routerLink]="['/search-author-results']" [queryParams]="{ q: searchauthor }">
+      <button type="submit" class="btn btn-primary">Search</button></a></span>
+  </div>
+</div>

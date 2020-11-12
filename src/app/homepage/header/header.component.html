@@ -1,0 +1,35 @@
+<div class="jumbotron">
+  <div class="position container">
+    <h1 data-aos="fade" data-aos-delay="1000" class="display-3">Discover Millions of New Books</h1>
+    <!-- <p class="lead">– Holbrook Jackson</p> -->
+    <hr data-aos="fade" data-aos-delay="1000" class="line-style">
+        <div data-aos="slide-right" data-aos-delay="2000" data-aos-duration="1000"
+         class="searchbox-style col-sm-8 col-sm-offset-2">
+        <div class="card text-left"> 
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item" (click)="bookSearchOn()">
+                <a [ngClass]="{'active': authorSearch === '' || authorSearch === 'book-clicked'}" class="nav-link">Books</a>
+              </li>
+              <li class="nav-item" (click)="authorSearchOn()">
+                <a [ngClass]="{'active': authorSearch === 'author-clicked'}" class="nav-link">Authors</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="form-block card-body-style">
+              <div class="row" [ngSwitch]="authorSearch">
+                <div class="input-width" *ngSwitchCase="'book-clicked'">
+                  <app-search-book></app-search-book>
+                </div>
+                <div class="input-width" *ngSwitchCase="'author-clicked'">
+                  <app-search-author></app-search-author>
+                </div>
+                <div class="input-width" *ngSwitchDefault><app-search-book></app-search-book></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

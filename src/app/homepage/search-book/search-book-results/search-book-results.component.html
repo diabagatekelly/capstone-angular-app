@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+      <div class="searchbox-style col-sm-8 col-sm-offset-2">
+     <div class="card text-left"> 
+       <div class="card-header">
+         <ul class="nav nav-tabs card-header-tabs">
+           <li class="nav-item" (click)="bookSearchOn()">
+             <a [ngClass]="{'active': authorSearch === '' || authorSearch === 'book-clicked'}" class="nav-link">Books</a>
+           </li>
+           <li class="nav-item" (click)="authorSearchOn()">
+             <a [ngClass]="{'active': authorSearch === 'author-clicked'}" class="nav-link">Authors</a>
+           </li>
+         </ul>
+       </div>
+       <div class="card-body">
+         <div class="form-block card-body-style">
+           <div class="row" [ngSwitch]="authorSearch">
+             <div class="input-width" *ngSwitchCase="'book-clicked'">
+               <app-search-book></app-search-book>
+             </div>
+             <div class="input-width" *ngSwitchCase="'author-clicked'">
+               <app-search-author></app-search-author>
+             </div>
+             <div class="input-width" *ngSwitchDefault><app-search-book></app-search-book></div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+  </div>
+  <hr/>
+    <div class="row" *ngFor="let search of bookDetail">
+      <div class="col text-center">
+          <div>Result 1 - {{search["results-end"]}} of {{ search["total-results"] }}</div>
+      </div>
+    </div>
+
+    <div class="grid">
+    <div class="books" *ngFor="let book of bookDetail[0].results[0].work">
+      <div>
+          <a [routerLink]="['/search-book-results/books']" [queryParams]="{
+            authorID: book.best_book[0].author[0].id[0]._,
+            bookID: book.best_book[0].id[0]._}">
+            <div class="img">
+                <img class="img-fluid" src="{{ book.best_book[0].image_url }}" />
+            </div>
+              <p>{{ book.best_book[0].title }}</p>
+          </a>
+          <a [routerLink]="['/search-author-results/authors']" [queryParams]="{ authorID: book.best_book[0].author[0].id[0]._}">
+        <p>{{ book.best_book[0].author[0].name }}</p>
+      </a>
+    </div>
+    </div>
+  </div>
+</div>
